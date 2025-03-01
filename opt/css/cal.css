@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@theme {
+  --font-poppins: Poppins, sans-serif;
+}
+@layer base {
+  * {
+    @apply box-border scroll-auto m-0;
+  }
+  body {
+    @apply antialiased font-poppins bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-400 p-[20px] my-0 mx-auto;
+  }
+  main {
+    @apply items-center m-auto h-full max-w-7xl py-6 px-9 rounded-md max-md:px-3;
+  }
+  h3 {
+    @apply text-2xl font-medium;
+  }
+  select {
+    @apply appearance-none min-w-[180px]  max-md:min-w-[70px] bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-400  cursor-pointer font-poppins text-center text-lg max-md:text-justify  max-md:py-[10px] max-md:px-[5px] max-md:appearance-auto;
+  }
+}
+@layer components {
+  /* Text red and green */
+  .hd {
+    @apply !text-red-500 dark:!text-red-400 font-medium;
+  }
+  .gre {
+    @apply !text-green-700;
+  }
+  /* -------------------------- */
+  .nav-bar {
+    @apply flex flex-row justify-between py-3 mb-3;
+  }
+  .nav-bar .right-bar {
+    @apply flex flex-row pt-5 gap-8 max-md:gap-3;
+  }
+  /* ---------------------------- Home ------------------------------------------ */
+  .home {
+    @apply flex flex-col py-5 px-5;
+  }
+  .home h3 {
+    @apply text-xl mb-4 max-md:text-lg;
+  }
+  .home p {
+    @apply text-[16px] max-md:text-sm indent-8 text-justify;
+  }
+  /* --------------------------- Calendar ------------------------------------ */
+  .cal-header {
+    @apply text-lg font-medium;
+  }
+  .topdiv {
+    @apply flex flex-row mb-[5px] rounded-[5px] max-md:flex-col justify-between py-[10px] px-[20px] max-md:m-auto max-md:gap-[5px];
+  }
+  .tbtn {
+    @apply border-0 cursor-pointer hover:text-amber-500 text-3xl font-semibold mx-[5px] max-md:hidden;
+  }
+  .calendar-body {
+    @apply p-[20px] rounded-[5px] shadow-sm;
+  }
+  .wddiv {
+    @apply grid grid-cols-7 gap-[5px] mb-[5px] max-md:hidden;
+  }
+  .wd {
+    @apply p-[7px] text-center font-medium font-poppins text-lg rounded-[3px] border-1 border-gray-300 max-md:hidden;
+  }
+  .daydiv {
+    @apply grid  grid-cols-7 gap-[5px] max-md:flex max-md:grid-cols-none max-md:flex-col;
+  }
+  .blank {
+    @apply p-[7px] text-center font-medium font-poppins text-sm rounded-[3px] min-h-[150px] border-1 border-gray-300 max-md:hidden;
+  }
+  .day {
+    @apply p-[7px] text-center font-medium font-poppins text-sm rounded-[3px] min-h-[150px] border-1 border-gray-300 cursor-pointer;
+  }
+  /* ------------------- */
+  .datediv {
+    @apply flex justify-between p-[3px] max-md:mb-[3px];
+  }
+  .datespan {
+    @apply text-lg font-medium;
+  }
+  .wdspan {
+    @apply hidden max-md:block max-md:font-medium;
+  }
+  .sbhspan {
+    @apply text-green-700 dark:text-green-500 text-xs;
+  }
+  /* ------------------------ */
+  .bmdiv {
+    @apply flex flex-col mt-[5px] gap-[3px] max-md:flex-row p-[3px] max-md:justify-between;
+  }
+  .bmspan {
+    @apply text-xs text-left;
+  }
+  .fmspan {
+    @apply ml-[7px];
+  }
+  /* ---------------- */
+  .dayview {
+    @apply p-[20px] rounded-[5px] my-[38px] mx-auto max-w-[300px] shadow-sm;
+  }
+  .backbtn {
+    @apply p-[7px] text-center rounded-[5px] border-1 border-gray-300 cursor-pointer min-w-[70px] mt-[20px] hover:bg-amber-600 hover:text-[#fff];
+  }
+  .dvtext {
+    @apply flex flex-col gap-[5px] mt-[10px];
+  }
+  .dvspan {
+    @apply text-sm font-mono;
+  }
+  /* ---------------------------------------------------- Calendar End ----------------------------------------------------------------- */
+}

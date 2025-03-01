@@ -1,0 +1,27 @@
+{
+  "name": "thetkarit",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "check": "biome check --write src && biome format --write src"
+  },
+  "keywords": [
+    "Burmese",
+    "Myanmar",
+    "Calendar"
+  ],
+  "author": "Pho Thin Mg",
+  "license": "Apache-2.0",
+  "description": "",
+  "dependencies": {
+    "dax-sh": "^0.42.0",
+    "lwe8-build": "^0.1.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@tailwindcss/cli": "^4.0.9",
+    "@types/node": "^22.13.8",
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5.8.2"
+  }
+}

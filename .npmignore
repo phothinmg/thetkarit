@@ -1,0 +1,13 @@
+node_modules
+noda
+src
+tsconfig.json
+biome.jsonc
+package-lock.json
+CODE_OF_CONDUCT.md
+build
+test
+public
+opt
+a.ts
+note
