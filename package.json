@@ -4,7 +4,7 @@
   "type": "module",
   "author": "Pho Thin Mg",
   "license": "Apache-2.0",
-  "description": "",
+  "description": "Burmese Calendar(Myanmar Calendar)",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
