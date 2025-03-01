@@ -15,9 +15,9 @@
   "browser": "./dist/cdn/index.js",
   "scripts": {
     "check": "biome check --write src && biome format --write src",
-    "build": "./build/index.js",
+    "build": "./opt/package/index.js",
     "docs": "./opt/docs.js",
-    "noda": "./noda/noda.js"
+    "noda": "./opt/noda/noda.js"
   },
   "keywords": [
     "Burmese",
