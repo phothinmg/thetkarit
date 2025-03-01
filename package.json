@@ -2,17 +2,36 @@
   "name": "thetkarit",
   "version": "0.1.0",
   "type": "module",
+  "author": "Pho Thin Mg",
+  "license": "Apache-2.0",
+  "description": "",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "browser": "./dist/cdn/index.js",
   "scripts": {
-    "check": "biome check --write src && biome format --write src"
+    "check": "biome check --write src && biome format --write src",
+    "build": "./build/index.js",
+    "docs": "./opt/docs.js",
+    "noda": "./noda/noda.js"
   },
   "keywords": [
     "Burmese",
     "Myanmar",
     "Calendar"
   ],
-  "author": "Pho Thin Mg",
-  "license": "Apache-2.0",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phothinmg/thetkarit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phothinmg/thetkarit/issues"
+  },
+  "homepage": "https://github.com/phothinmg/thetkarit#readme",
   "dependencies": {
     "dax-sh": "^0.42.0",
     "lwe8-build": "^0.1.6"
