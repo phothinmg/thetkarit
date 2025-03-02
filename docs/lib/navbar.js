@@ -35,7 +35,7 @@ document.getElementById("navbar").innerHTML=`
        />
        </svg>
   </a>
-  <a href="./calendar/index.html">
+  <a href="./calendar.html">
      <svg  
      xmlns="http://www.w3.org/2000/svg"  
      width="24"  

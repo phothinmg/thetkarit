@@ -12,18 +12,16 @@
       <div class="nav-bar" id="navbar"></div>
       <div class="home">
         <h3 class="head-text">Project Thetkarit</h3>
-        
-        <article id="md" class="article"></article>
+        <article id="art" class="article">
+          <p>
+            The project try to provides Burmese Calendar (Myanmar Calendar) data
+            along with Gregorian calendar data, also try to provides some time
+            zone information and conversion between Julian date, Julian calendar
+            date and Gregorian calendar date.
+          </p>
+        </article>
       </div>
     </main>
-    <script type="module">
-      import { converter } from "./lib/converter.js";
-      fetch("./home/home.md")
-        .then((res) => res.text())
-        .then((content) => {
-          document.getElementById("md").innerHTML = converter(content);
-        });
-    </script>
     <script src="./lib/navbar.js"></script>
     <script src="./lib/theme.js"></script>
   </body>
