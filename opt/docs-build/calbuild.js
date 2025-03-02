@@ -9,10 +9,10 @@ await (async () => {
   const options = {
     format: ["browser"],
     indexFile: {
-      path: "./opt/js/index.js",
+      path: "./opt/js/cal.js",
     },
     outputDirs: {
-      browser: "./docs/js",
+      browser: "./docs/calendar/js",
     },
     otherFiles: [
       {

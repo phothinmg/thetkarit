@@ -3,7 +3,8 @@ import fs from "node:fs";
 import $ from "dax-sh";
 // Calendar UI
 await (async function () {
-  const calStyleOut = "./docs/index.css";
+  const calStyleOut = "./docs/calendar/index.css";
+  const homeStyleOut = "./docs/home.css";
   $.logStep("[BuildCss]: With TailwindCss v.04 for calendar UI.");
   if (fs.existsSync(calStyleOut)) {
     fs.unlinkSync(calStyleOut);

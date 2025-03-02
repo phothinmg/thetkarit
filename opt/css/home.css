@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-poppins: Poppins, sans-serif;
+}
+@layer base {
+  * {
+    @apply box-border scroll-auto m-0;
+  }
+  body {
+    @apply antialiased font-poppins bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-400 p-[20px] my-0 mx-auto;
+  }
+  main {
+    @apply items-center m-auto h-full max-w-7xl py-6 px-9 rounded-md max-md:px-3;
+  }
+  h2 {
+    @apply text-3xl font-medium my-3;
+  }
+  h3 {
+    @apply text-2xl indent-3 my-3 font-medium;
+  }
+  p {
+    @apply text-lg text-justify indent-8;
+  }
+  pre {
+    @apply p-2 my-2 ml-10 mr-auto w-[50%] max-md:w-auto max-md:mx-auto rounded text-sm whitespace-pre overflow-auto;
+  }
+}
+
+@layer components {
+  /* -------------------------- */
+  .nav-bar {
+    @apply flex flex-row justify-between py-3 mb-3;
+  }
+  .nav-bar .right-bar {
+    @apply flex flex-row pt-5 gap-8 max-md:gap-3;
+  }
+  .home {
+    @apply w-full h-auto clear-both shadow-sm py-5 px-5 rounded-md;
+  }
+  /* shiki */
+  .has-diff {
+    @apply block;
+  }
+  .line {
+    @apply px-2;
+  }
+  .diff {
+    @apply py-0.5 rounded;
+  }
+  .add {
+    @apply bg-green-300 before:content-['+'];
+  }
+  .remove {
+    @apply bg-red-400 before:content-['-'];
+  }
+}

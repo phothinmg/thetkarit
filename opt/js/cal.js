@@ -1,7 +1,8 @@
 (function () {
   const calEl = document.getElementById("cal");
   const dv = document.getElementById("dv");
-  const bcal = new Calendar();
+  const bcal = new BurmeseCal();
+  const gcal = new BcGcal();
   const dt = new Date();
   // ------------------------------------
   function showMonthView() {
@@ -15,7 +16,7 @@
   /**
    * @type {string[]}
    */
-  const months = bcal.MONTH_SHORT;
+  const months = gcal.MONTH_SHORT;
   /**
    * @type {number[]}
    */

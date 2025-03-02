@@ -3,19 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/burmese-calendar@0.0.1/dist/cdn/index.min.js"></script>
+    <link rel="stylesheet" href="shiki.css" />
+    <link rel="stylesheet" href="./home/home.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Burmese Calendar</title>
+    <title>Thetkarit | Home</title>
   </head>
   <body>
     <main>
       <div class="nav-bar" id="navbar"></div>
-      <div id="calendar" style="margin-top: 5px">
-        <div id="cal"></div>
-        <div id="dv"></div>
+      <div class="home">
+        <div id="content" class="props"></div>
       </div>
     </main>
-    <script src="./js/index.js"></script>
+    <script type="module">
+      import { converter } from "./lib/converter.js";
+      fetch("./home/home.md")
+        .then((res) => res.text())
+        .then((content) => {
+          document.getElementById("content").innerHTML = converter(content);
+        });
+    </script>
+    <script src="../opt/js/navbar.js"></script>
+    <script src="../opt/js/theme.js"></script>
   </body>
 </html>
