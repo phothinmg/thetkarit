@@ -1,6 +1,4 @@
-(function () {
-  const navBar = document.getElementById("navbar");
-  navBar.innerHTML = `
+document.getElementById("navbar").innerHTML=`
  <img
   src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Peacock_symbol_Burma.svg"
   alt="pk"
@@ -122,5 +120,5 @@
 </div>
 
  
- `;
-})();
+ `; 
+ //# sourceMappingURL=navbar.js.map 

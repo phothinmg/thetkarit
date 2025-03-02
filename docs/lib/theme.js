@@ -1,0 +1,2 @@
+(()=>{let a=document.querySelector("html");var e=document.getElementById("themebtn"),t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",t=localStorage.getItem("theme")||t;a.classList.add(t),localStorage.setItem("theme",t),e.addEventListener("click",()=>{var e=a.classList.contains("dark")?"dark":"light",t="dark"==e?"light":"dark";a.classList.replace(e,t),localStorage.setItem("theme",t)})})(); 
+ //# sourceMappingURL=theme.js.map 

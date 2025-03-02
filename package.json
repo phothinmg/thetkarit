@@ -15,9 +15,9 @@
   "browser": "./dist/cdn/index.js",
   "scripts": {
     "check": "biome check --write src && biome format --write src",
-    "build": "./opt/package/index.js",
-    "docs": "./opt/docs.js",
-    "noda": "./opt/noda/noda.js"
+    "build": "./opt/index.js",
+    "noda": "./opt/noda/noda.js",
+    "css": " npx @tailwindcss/cli -i ./opt/style.css -o ./docs/style.css --minify"
   },
   "keywords": [
     "Burmese",
@@ -40,8 +40,6 @@
     "@biomejs/biome": "^1.9.4",
     "@tailwindcss/cli": "^4.0.9",
     "@types/node": "^22.13.8",
-    "@types/showdown": "^2.0.6",
-    "showdown": "^2.1.0",
     "tailwindcss": "^4.0.9",
     "typescript": "^5.8.2"
   }

@@ -2,3 +2,6 @@ node_modules
 dist
 a.ts
 note
+a.js
+b.js
+a.txt

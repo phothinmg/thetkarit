@@ -3,16 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="shiki.css" />
-    <link rel="stylesheet" href="./home/home.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
     <title>Thetkarit | Home</title>
   </head>
   <body>
     <main>
       <div class="nav-bar" id="navbar"></div>
       <div class="home">
-        <div id="content" class="props"></div>
+        <h3 class="head-text">Project Thetkarit</h3>
+        
+        <article id="md" class="article"></article>
       </div>
     </main>
     <script type="module">
@@ -20,10 +21,10 @@
       fetch("./home/home.md")
         .then((res) => res.text())
         .then((content) => {
-          document.getElementById("content").innerHTML = converter(content);
+          document.getElementById("md").innerHTML = converter(content);
         });
     </script>
-    <script src="../opt/js/navbar.js"></script>
-    <script src="../opt/js/theme.js"></script>
+    <script src="./lib/navbar.js"></script>
+    <script src="./lib/theme.js"></script>
   </body>
 </html>
