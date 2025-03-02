@@ -6,7 +6,7 @@ document.getElementById("navbar").innerHTML=`
   height="54"
 />
 <div class="right-bar">
-  <a href="/">
+  <a href="/thetkarit">
      <svg  
        xmlns="http://www.w3.org/2000/svg"  
        width="24"  
@@ -35,7 +35,7 @@ document.getElementById("navbar").innerHTML=`
        />
        </svg>
   </a>
-  <a href="./calendar.html">
+  <a href="./calendar/index.html">
      <svg  
      xmlns="http://www.w3.org/2000/svg"  
      width="24"  
