@@ -1,9 +1,8 @@
 # Thetkarit
 
 ## About
-
-The package provides a JavaScript object of Burmese Calendar (Myanmar Calendar) data along with Gregorian calendar data.
-It also provides some time zone information and conversion between Julian date, Julian calendar date and Gregorian calendar date.
+The project try to provides Burmese Calendar (Myanmar Calendar) dataalong with Gregorian calendar data, also try to provides some time
+zone information and conversion between Julian date, Julian calendardate and Gregorian calendar date.
 
 ## Install
 
