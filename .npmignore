@@ -10,6 +10,7 @@ biome.jsonc
 build.js
 CMakeLists.txt
 package-lock.json
+SECURITY.md
 # ---------------------
 
 a.cpp

@@ -1,6 +1,7 @@
 node_modules
 build
-SECURITY.md
+dist
+cdn
 a.cpp
 a.js
 a.ts
