@@ -3,6 +3,11 @@
     <h2>Thetkarit</h2>
 </div>
 
+![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) ![NPM Version](https://img.shields.io/npm/v/thetkarit)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis)  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms)
+
+
+
 ## Overview
 
 The Burmese calendar calculations focus on Burmese calendar and astronomy studies and are still in progress.

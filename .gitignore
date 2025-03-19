@@ -2,6 +2,7 @@ node_modules
 build
 dist
 cdn
+SECURITY.md
 a.cpp
 a.js
 a.ts
