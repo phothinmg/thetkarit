@@ -17,7 +17,6 @@ The Burmese calendar calculations focus on Burmese calendar and astronomy studie
 
 ![NPM Version](https://img.shields.io/npm/v/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/npm-publish.yaml?logo=npm&label=publish%20to%20npm) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
 
-### API Docs : [https://tsdocs.dev/docs/thetkarit/latest/index.html](https://tsdocs.dev/docs/thetkarit/latest/index.html)
 
 ### Install
 
@@ -43,14 +42,21 @@ const { BurmeseCal } = require("thetkarit"); //common js
 const bcal = new BurmeseCal();
 ```
 
+**API Docs : [https://tsdocs.dev/docs/thetkarit/latest/index.html](https://tsdocs.dev/docs/thetkarit/latest/index.html)**
+
 ---
 
-## Browser
+## Browser (JavaScript)
 
-**jsDelivr :** [https://www.jsdelivr.com/package/npm/burmese-calendar](https://www.jsdelivr.com/package/npm/burmese-calendar)
+### Status
+
+[![](https://data.jsdelivr.com/v1/package/npm/thetkarit/badge)](https://www.jsdelivr.com/package/npm/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
+
+
+**jsDelivr :** [https://www.jsdelivr.com/package/npm/thetkarit](https://www.jsdelivr.com/package/npm/thetkarit)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/burmese-calendar/cdn/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/thetkarit/cdn/index.min.js"></script>
 ```
 
 ---
@@ -61,11 +67,9 @@ const bcal = new BurmeseCal();
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
 
-### Use
+### Useage
 
 Download latest `thetkarit.zip` from [here](https://github.com/phothinmg/thetkarit/releases/latest/download/thetkarit.zip).
-
-
 
 ```cpp
 #include "thetkarit/bcal.hpp" // include bcal header
@@ -100,22 +104,19 @@ Day in Burmese Month: 12
 Public Holidays: Union Day
 ```
 
-### Running example 
+### Running example
 
 Clone the repository and build it using cmake, and run;.
 
 ```bash
 git clone https://github.com/phothinmg/thetkarit.git
 cd thetkarit
-
 mkdir build
 cd build
 cmake ..
 make
-
 ./bcal # Running example
 ```
-
 
 ---
 
