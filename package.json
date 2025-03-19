@@ -1,0 +1,44 @@
+{
+  "name": "thetkarit",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "browser": "./cdn/index.js",
+  "scripts": {
+    "check": "biome check --write src && biome format --write src",
+    "build": "./build.js",
+    "noda": "./noda/noda.js"
+  },
+  "keywords": [
+    "Gregorian calendar",
+    "Burmese calendar"
+  ],
+  "author": {
+    "name": "Pho Thin Mg",
+    "email": "phothinmg@disroot.org",
+    "url": "https://github.com/phothinmg"
+  },
+  "license": "MIT",
+  "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phothinmg/burmese-calendar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phothinmg/burmese-calendar/issues"
+  },
+  "dependencies": {
+    "lwe8-build": "^0.1.6"
+  }
+}
