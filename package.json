@@ -33,10 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/phothinmg/burmese-calendar.git"
+    "url": "https://github.com/phothinmg/thetkarit.git"
   },
   "bugs": {
-    "url": "https://github.com/phothinmg/burmese-calendar/issues"
+    "url": "https://github.com/phothinmg/thetkarit/issues"
   },
   "dependencies": {
     "lwe8-build": "^0.1.6"
