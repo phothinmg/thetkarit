@@ -3,8 +3,7 @@
     <h2>Thetkarit</h2>
 </div>
 
-![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) 
-
+![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit)
 
 ## Overview
 
@@ -18,8 +17,7 @@ The Burmese calendar calculations focus on Burmese calendar and astronomy studie
 
 ![NPM Version](https://img.shields.io/npm/v/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/npm-publish.yaml?logo=npm&label=publish%20to%20npm) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
 
-
-
+### API Docs : [https://tsdocs.dev/docs/thetkarit/latest/index.html](https://tsdocs.dev/docs/thetkarit/latest/index.html)
 
 ### Install
 
@@ -61,10 +59,64 @@ const bcal = new BurmeseCal();
 
 ### Status
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis)  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
+
+### Use
+
+Download latest `thetkarit.zip` from [here](https://github.com/phothinmg/thetkarit/releases/latest/download/thetkarit.zip).
 
 
-## Usage
+
+```cpp
+#include "thetkarit/bcal.hpp" // include bcal header
+#include <iostream>
+#include <iomanip>
+
+/// @brief Gregorian Calendar Date to Burmese Calendar Date
+int main()
+{
+    bcal::BcalInfo dv = bcal::day_v(2025, 2, 12).bcal_info;
+    std::cout << "Sasana Year: " << std::setprecision(0) << dv.sasana_year << std::endl;
+    std::cout << "Burmese Year: " << std::setprecision(0) << dv.burmese_year << std::endl;
+    std::cout << "Burmese Month: " << dv.burmese_month_str << std::endl;
+    std::cout << "Moon Phase: " << dv.moon_phases_str << std::endl;
+    std::cout << "Fortnight Day: " << std::setprecision(0) << dv.fortnight_day << std::endl;
+    std::cout << "Day in Burmese Month: " << std::setprecision(0) << dv.burmese_day << std::endl;
+    std::cout << "Public Holidays: ";
+    for (const auto &holiday : dv.public_holiday)
+    {
+        std::cout << holiday << std::endl;
+    }
+}
+```
+
+```
+Sasana Year: 2568
+Burmese Year: 1386
+Burmese Month: Tabodwe
+Moon Phase: Waxing
+Fortnight Day: 12
+Day in Burmese Month: 12
+Public Holidays: Union Day
+```
+
+### Running example 
+
+Clone the repository and build it using cmake, and run;.
+
+```bash
+git clone https://github.com/phothinmg/thetkarit.git
+cd thetkarit
+
+mkdir build
+cd build
+cmake ..
+make
+
+./bcal # Running example
+```
+
+
 ---
 
 ## Resources
