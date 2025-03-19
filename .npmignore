@@ -1,12 +1,18 @@
-node_modules
-package-lock.json
-.vscode
-docs
-src
+# -------------
 .github
+.vscode
+example
 noda
+node_modules
+src
+thetkarit
 biome.jsonc
 build.js
+CMakeLists.txt
+package-lock.json
+# ---------------------
+
+a.cpp
 a.js
 a.ts
 a.cjs

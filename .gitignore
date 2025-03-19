@@ -2,7 +2,7 @@ node_modules
 build
 dist
 cdn
+a.cpp
 a.js
 a.ts
 a.cjs
-a.html

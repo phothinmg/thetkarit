@@ -14,23 +14,23 @@ The Burmese calendar calculations focus on Burmese calendar and astronomy studie
 ### Install
 
 ```bash
-npm i burmese-calendar
+npm i thetkarit
 ```
 
 ```bash
-yarn add burmese-calendar
+yarn add thetkarit
 ```
 
 ```bash
-pnpm add burmese-calendar
+pnpm add thetkarit
 ```
 
 ### Usage for Node js
 
 ```js
-import { BurmeseCal } from "burmese-calendar"; // esm
+import { BurmeseCal } from "thetkarit"; // esm
 
-const { BurmeseCal } = require("burmese-calendar"); //common js
+const { BurmeseCal } = require("thetkarit"); //common js
 
 const bcal = new BurmeseCal();
 ```
