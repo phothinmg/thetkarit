@@ -3,9 +3,7 @@
     <h2>Thetkarit</h2>
 </div>
 
-![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) ![NPM Version](https://img.shields.io/npm/v/thetkarit)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis)  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms)
-
+![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) 
 
 
 ## Overview
@@ -14,7 +12,14 @@ The Burmese calendar calculations focus on Burmese calendar and astronomy studie
 
 ---
 
-## Node Js
+## Node Js (JavaScript/TypeScript)
+
+### Status
+
+![NPM Version](https://img.shields.io/npm/v/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/npm-publish.yaml?logo=npm&label=publish%20to%20npm) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
+
+
+
 
 ### Install
 
@@ -49,6 +54,18 @@ const bcal = new BurmeseCal();
 ```html
 <script src="https://cdn.jsdelivr.net/npm/burmese-calendar/cdn/index.min.js"></script>
 ```
+
+---
+
+## C++
+
+### Status
+
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis)  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
+
+
+## Usage
+---
 
 ## Resources
 
