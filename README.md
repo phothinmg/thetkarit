@@ -9,6 +9,8 @@
 
 The Burmese calendar calculations focus on Burmese calendar and astronomy studies and are still in progress.
 
+Most of the code here is in the public domain or released under an open source license, though some code and/or data may be under other copyright (usually an open source license), see [Resources](#resources).
+
 ---
 
 ## Node Js (JavaScript/TypeScript)
@@ -16,7 +18,6 @@ The Burmese calendar calculations focus on Burmese calendar and astronomy studie
 ### Status
 
 ![NPM Version](https://img.shields.io/npm/v/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/npm-publish.yaml?logo=npm&label=publish%20to%20npm) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
-
 
 ### Install
 
@@ -32,7 +33,7 @@ yarn add thetkarit
 pnpm add thetkarit
 ```
 
-### Usage for Node js
+### Usage
 
 ```js
 import { BurmeseCal } from "thetkarit"; // esm
@@ -54,6 +55,7 @@ const bcal = new BurmeseCal();
 
 
 **jsDelivr :** [https://www.jsdelivr.com/package/npm/thetkarit](https://www.jsdelivr.com/package/npm/thetkarit)
+
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/thetkarit/cdn/index.min.js"></script>
@@ -94,6 +96,7 @@ int main()
 }
 ```
 
+
 ```
 Sasana Year: 2568
 Burmese Year: 1386
@@ -104,9 +107,9 @@ Day in Burmese Month: 12
 Public Holidays: Union Day
 ```
 
-### Running example
+### Example C++ program
 
-Clone the repository and build it using cmake, and run;.
+Clone the repository and build it using cmake, and run;
 
 ```bash
 git clone https://github.com/phothinmg/thetkarit.git
