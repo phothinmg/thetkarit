@@ -1,7 +1,7 @@
 import { deepavali } from "./deepavali";
 import { eidDays } from "./eidDays";
+import { special_holidays, special_sat } from "./sp_execptions";
 import { substituteHolidays } from "./substituteHolidays";
-import { special_holidays,special_sat } from "./sp_execptions";
 
 interface HolidaysOpts {
 	/**
@@ -93,8 +93,8 @@ export class BcHolidays {
 			hs.push("Holiday");
 		} else if (bm === 8 && mp === 1) {
 			hs.push("Tazaungdaing");
-		// } else if (by >= 1379 && bm === 8 && bd === 14) {
-		// 	hs.push("Holiday");
+			// } else if (by >= 1379 && bm === 8 && bd === 14) {
+			// 	hs.push("Holiday");
 		} else if (by >= 1282 && bm === 8 && bd === 25) {
 			hs.push("National Day");
 		} else if (bm === 10 && bd === 1) {
@@ -229,8 +229,8 @@ export class BcHolidays {
 		this.eid_day(this._jdn, hhs);
 		this.de_pavali(this._jdn, hhs);
 		this.substitute(this._jdn, hhs);
-		this.sepHlds(this._jdn,hhs);
-		this.sepSats(this._jdn,hhs);
+		this.sepHlds(this._jdn, hhs);
+		this.sepSats(this._jdn, hhs);
 		return hhs;
 	}
 }

@@ -2,7 +2,6 @@
 /** @import {BuildOptions} from "lwe8-build" */
 import { build } from "lwe8-build";
 
-
 // Build for npm package
 await (async () => {
   /**
@@ -12,7 +11,7 @@ await (async () => {
     format: ["esm", "cjs", "browser"],
     indexFile: {
       path: "./src/index.ts",
-      lines: 12,
+      lines: 13,
     },
     outputDirs: {
       esm: "./dist",
@@ -101,6 +100,10 @@ await (async () => {
         path: "./src/julian/index.ts",
         lines: 4,
         removeExport: true,
+      },
+      {
+        path: "./src/moon/index.ts",
+        lines: 3,
       },
     ],
   };

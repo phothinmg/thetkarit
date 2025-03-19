@@ -8,8 +8,8 @@ export const langs: string[][] = [
 	["Friday", "သောကြာ"],
 	["Saturday", "စနေ"],
 	//
-	["Special Holiday","အထူးရုံးပိတ်ရက်"],
-	["Substitute Working-day","အစားထိုးရုံးဖွင့်ရက်"],
+	["Special Holiday", "အထူးရုံးပိတ်ရက်"],
+	["Substitute Working-day", "အစားထိုးရုံးဖွင့်ရက်"],
 	//
 	["January", "ဇန်နဝါရီ"],
 	["February", "ဖေဖော်ဝါရီ"],
