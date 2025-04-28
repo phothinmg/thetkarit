@@ -39,6 +39,6 @@
     "url": "https://github.com/phothinmg/thetkarit/issues"
   },
   "dependencies": {
-    "lwe8-build": "^0.1.7"
+    "lwe8-build": "^0.2.0"
   }
 }
