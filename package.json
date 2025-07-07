@@ -28,7 +28,7 @@
   "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",
-    "@types/node": "^24.0.3",
+    "@types/node": "^24.0.10",
     "typescript": "^5.8.2"
   },
   "repository": {
