@@ -17,7 +17,7 @@ Most of the code here is in the public domain or released under an open source l
 
 ### Status
 
-![NPM Version](https://img.shields.io/npm/v/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/npm-publish.yaml?logo=npm&label=publish%20to%20npm) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/npm-publish.yaml?logo=npm&label=publish%20to%20npm) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
 
 ### Install
 
