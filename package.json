@@ -27,7 +27,7 @@
   "license": "MIT",
   "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
   "devDependencies": {
-    "@biomejs/biome": "^2.0.6",
+    "@biomejs/biome": "^2.1.2",
     "@types/node": "^24.0.13",
     "typescript": "^5.8.2"
   },
