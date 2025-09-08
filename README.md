@@ -1,9 +1,8 @@
-<div align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Peacock_symbol_Burma.svg" width="100" height="100" alt="pk">
-    <h2>Thetkarit</h2>
-</div>
+# Thetkarit
 
-![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit)
+![Pecok](https://upload.wikimedia.org/wikipedia/commons/a/a5/Peacock_symbol_Burma.svg)
+
+![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
 
 ## Overview
 
@@ -13,65 +12,11 @@ Most of the code here is in the public domain or released under an open source l
 
 ---
 
-## Node Js (JavaScript/TypeScript)
-
-### Status
-
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/npm-publish.yaml?logo=npm&label=publish%20to%20npm) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
-
-### Install
-
-```bash
-npm i thetkarit
-```
-
-```bash
-yarn add thetkarit
-```
-
-```bash
-pnpm add thetkarit
-```
-
-### Usage
-
-```js
-import { BurmeseCal } from "thetkarit"; // esm
-
-const { BurmeseCal } = require("thetkarit"); //common js
-
-const bcal = new BurmeseCal();
-```
-
-**API Docs : [https://tsdocs.dev/docs/thetkarit/latest/index.html](https://tsdocs.dev/docs/thetkarit/latest/index.html)**
-
----
-
-## Browser (JavaScript)
-
-### Status
-
-[![](https://data.jsdelivr.com/v1/package/npm/thetkarit/badge)](https://www.jsdelivr.com/package/npm/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
-
-
-**jsDelivr :** [https://www.jsdelivr.com/package/npm/thetkarit](https://www.jsdelivr.com/package/npm/thetkarit)
-
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/thetkarit/cdn/index.min.js"></script>
-```
-
----
-
 ## C++
-
-### Status
-
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
 
 ### Useage
 
-Download latest `thetkarit.zip` from [here](https://github.com/phothinmg/thetkarit/releases/latest/download/thetkarit.zip).
+Download latest `thetkarit.zip` from <https://github.com/phothinmg/thetkarit/releases/latest/download/thetkarit.zip>.
 
 ```cpp
 #include "thetkarit/bcal.hpp" // include bcal header
@@ -94,10 +39,8 @@ int main()
         std::cout << holiday << std::endl;
     }
 }
-```
 
-
-```
+```text
 Sasana Year: 2568
 Burmese Year: 1386
 Burmese Month: Tabodwe
@@ -131,14 +74,14 @@ make
 
 - References:
 
-  https://cool-emerald.blogspot.com/2013/06/algorithm-program-and-calculation-of.html
+  <https://cool-emerald.blogspot.com/2013/06/algorithm-program-and-calculation-of.html>
 
-  https://cool-emerald.blogspot.com/2013/12/myanmar-astrological-calendar-days.html
+  <https://cool-emerald.blogspot.com/2013/12/myanmar-astrological-calendar-days.html>
 
 ### Julian Date and Moon Phases
 
-- A collection of astronomy related programs, algorithms, tutorials, data and implementation of the algorithm from Meeus' Astronomical Algorithms for computing the dates of the phases of the Moon by Greg Miller (gmiller@gregmiller.net).
+- A collection of astronomy related programs, algorithms, tutorials, data and implementation of the algorithm from Meeus' Astronomical Algorithms for computing the dates of the phases of the Moon by Greg Miller (<gmiller@gregmiller.net>).
 
-- Reference: https://www.celestialprogramming.com/
+- Reference: <https://www.celestialprogramming.com/>
 
 ---

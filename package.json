@@ -9,7 +9,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "browser": "./cdn/index.js",
   "scripts": {
     "check": "biome check --write src && biome format --write src",
     "build": "./build.js",
@@ -26,11 +25,6 @@
   },
   "license": "MIT",
   "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
-  "devDependencies": {
-    "@biomejs/biome": "^2.1.2",
-    "@types/node": "^24.3.0",
-    "typescript": "^5.9.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/phothinmg/thetkarit.git"
@@ -38,7 +32,9 @@
   "bugs": {
     "url": "https://github.com/phothinmg/thetkarit/issues"
   },
-  "dependencies": {
-    "lwe8-build": "^0.2.0"
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.3",
+    "@types/node": "^24.3.1",
+    "typescript": "^5.9.2"
   }
 }
