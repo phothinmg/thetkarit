@@ -20,7 +20,7 @@ interface AstroOpts {
 	 */
 	lm: number;
 }
-export class BcAstro {
+class BcAstro {
 	public astroDays: string[];
 	public sabbath: { index: number; str: string };
 	public nagahle: { index: number; str: string };
@@ -322,3 +322,5 @@ export class BcAstro {
 		return hs;
 	}
 }
+
+export { BcAstro };

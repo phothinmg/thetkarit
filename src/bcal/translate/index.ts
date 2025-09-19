@@ -1,7 +1,7 @@
 import { langs } from "./langs";
 import type { Language } from "./types";
 
-export class BcTranslate {
+class BcTranslate {
 	/**
 	 * Translates a number from 0-9 into a string based on the given language.
 	 * If the language is English, the number is returned as is.
@@ -19,10 +19,10 @@ export class BcTranslate {
 		} else {
 			const aa: string[] = a.toString().split("");
 			const bb: string[] = [];
-			aa.map((i) => {
-				const x: string = b[Number.parseInt(i)];
+			for (const a of aa) {
+				const x: string = b[Number.parseInt(a, 10)];
 				bb.push(x);
-			});
+			}
 			r = bb.join("");
 		}
 		return r;
@@ -47,10 +47,10 @@ export class BcTranslate {
 		} else {
 			if (Array.isArray(str)) {
 				const y: string[] = [];
-				str.map((i) => {
+				for (const i of str) {
 					const z = langs.filter((k) => k[0] === i);
 					y.push(z[0][1]);
-				});
+				}
 				r = y;
 			} else {
 				const x = langs.find((i) => i[0] === str);
@@ -60,3 +60,5 @@ export class BcTranslate {
 		return r;
 	}
 }
+
+export { BcTranslate };

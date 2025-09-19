@@ -1,4 +1,4 @@
-export const substituteHolidays: number[] = [
+const substituteHolidays: number[] = [
 	// 2019
 	2458768, 2458772, 2458785, 2458800,
 	// 2020
@@ -7,3 +7,5 @@ export const substituteHolidays: number[] = [
 	// 2021
 	2459300, 2459303, 2459323, 2459324, 2459335, 2459548, 2459573,
 ];
+
+export { substituteHolidays };

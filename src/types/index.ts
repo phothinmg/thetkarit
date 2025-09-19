@@ -1,7 +1,8 @@
 import type { Language } from "../bcal/translate/types";
 import type { TimeZones } from "../timezones/tztypes";
+
 // ----------------------------------------------------
-export type DayViewOptions = {
+type DayViewOptions = {
 	/**
 	 * Gregorian year
 	 */
@@ -22,7 +23,7 @@ export type DayViewOptions = {
 	lang?: Language;
 };
 //-----
-export type MontnViewOptions = {
+type MontnViewOptions = {
 	/**
 	 * Gregorian year
 	 */
@@ -40,7 +41,7 @@ export type MontnViewOptions = {
 	lang?: Language;
 };
 // --------
-export type YearViewOptions = {
+type YearViewOptions = {
 	/**
 	 * Gregorian year
 	 */
@@ -53,7 +54,7 @@ export type YearViewOptions = {
 	lang?: Language;
 };
 
-export type DayViewObject = {
+type DayViewObject = {
 	/**
 	 * Julian Day Number
 	 */
@@ -256,7 +257,7 @@ export type DayViewObject = {
 	};
 };
 //--------------------------------------------------------------------------------------------------------------------
-export type MonthViewObject = {
+type MonthViewObject = {
 	/**
 	 * Gregorian Year
 	 */
@@ -318,8 +319,7 @@ export type MonthViewObject = {
 	date_views: Array<DayViewObject>;
 };
 // ------------------------------------------------------------------------------------------------------
-
-export type YearViewObject = {
+type YearViewObject = {
 	/**
 	 * Gregorian Year
 	 */
@@ -357,8 +357,8 @@ export type YearViewObject = {
 	month_views: Array<MonthViewObject>;
 };
 /* ------------------------------------------------------- */
-export type CalendarTypes = "gregorian" | "julian";
-export type CalendarConvertOptions = {
+type CalendarTypes = "gregorian" | "julian";
+type CalendarConvertOptions = {
 	ct: CalendarTypes;
 	year: number;
 	month: number;
@@ -369,7 +369,7 @@ export type CalendarConvertOptions = {
  * Interface representing the properties of ThinGyan object.
  * Contains YearTo, YearFrom, AkyoDay, AkyaDayTime, AkyatDay, AkyatDay2, AtatDayTime, and NewYearDay.
  */
-export interface ThinGyan {
+interface ThinGyan {
 	YearTo: number;
 	YearFrom: number;
 	AkyoDay: string;
@@ -381,7 +381,7 @@ export interface ThinGyan {
 	akyatday2: boolean;
 }
 
-export type G2JOptions = {
+type G2JOptions = {
 	year: number;
 	month: number;
 	day: number;
@@ -389,4 +389,18 @@ export type G2JOptions = {
 	minutes?: number;
 	seconds?: number;
 	tz?: TimeZones;
+};
+
+export type {
+	G2JOptions,
+	ThinGyan,
+	TimeZones,
+	CalendarConvertOptions,
+	CalendarTypes,
+	YearViewObject,
+	YearViewOptions,
+	MonthViewObject,
+	MontnViewOptions,
+	DayViewObject,
+	DayViewOptions,
 };

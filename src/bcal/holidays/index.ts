@@ -1,6 +1,6 @@
 import { deepavali } from "./deepavali";
 import { eidDays } from "./eidDays";
-import { special_holidays, special_sat } from "./sp_execptions";
+import { special_holidays } from "./sp_exceptions";
 import { substituteHolidays } from "./substituteHolidays";
 
 interface HolidaysOpts {

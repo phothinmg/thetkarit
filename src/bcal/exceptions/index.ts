@@ -7,7 +7,7 @@
  * The second full moon of Waso, which was in conflict with the calendar advisory group, must be checked and filled in every year.
  */
 
-export const FME: number[][] = [
+const FME: number[][] = [
 	[1377, 1],
 	//
 	[1234, 1],
@@ -44,10 +44,12 @@ export const FME: number[][] = [
 /**
  * Warhtat Exceptions
  */
-export const WTE: { one: number[]; zero: number[] } = {
+const WTE: { one: number[]; zero: number[] } = {
 	one: [1201, 1263, 1344, 1372, 1374, 1377, 1380, 1382, 1385],
 	zero: [
 		1202, 1264, 1345, 1370, 1371, 1373, 1375, 1376, 1378, 1379, 1381, 1383,
 		1384, 1386,
 	],
 };
+
+export { FME, WTE };

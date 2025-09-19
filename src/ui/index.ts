@@ -11,7 +11,7 @@
  * console.log(result.before); // 3
  * console.log(result.after);  // 1
  */
-export function blankCells(
+function blankCells(
 	weekdayId: number,
 	daysInMonth: number,
 ): { before: number; after: number } {
@@ -34,7 +34,7 @@ export function blankCells(
  * @throws An error if `end` is not greater than `start`.
  */
 
-export function numberRange(start: number, end: number): number[] {
+function numberRange(start: number, end: number): number[] {
 	if (end <= start) {
 		throw new Error("End must be greater than Start");
 	}
@@ -45,3 +45,5 @@ export function numberRange(start: number, end: number): number[] {
 	}
 	return na;
 }
+
+export { blankCells, numberRange };

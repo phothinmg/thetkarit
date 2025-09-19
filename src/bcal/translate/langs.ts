@@ -1,4 +1,4 @@
-export const langs: string[][] = [
+const langs: string[][] = [
 	//
 	["Sunday", "တနင်္ဂနွေ"],
 	["Monday", "တနင်္လာ"],
@@ -112,3 +112,5 @@ export const langs: string[][] = [
 	["Warhtat Year", "ဝါထပ်နှစ်"],
 	["Big Warhtat Year", "ဝါကြီးထပ်နှစ်"],
 ];
+
+export { langs };

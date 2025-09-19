@@ -6,10 +6,18 @@ import type { Language } from "./bcal/translate/types";
 import { helpers } from "./helpers";
 import { BcGcal } from "./julian/index.js";
 import type { TimeZones } from "./timezones/tztypes.js";
-import type { G2JOptions, MontnViewOptions, YearViewOptions } from "./types";
-import type { DayViewOptions, ThinGyan } from "./types";
-import type { DayViewObject, MonthViewObject } from "./types";
-import type { CalendarConvertOptions, YearViewObject } from "./types";
+import type {
+	CalendarConvertOptions,
+	DayViewObject,
+	DayViewOptions,
+	G2JOptions,
+	MonthViewObject,
+	MontnViewOptions,
+	ThinGyan,
+	YearViewObject,
+	YearViewOptions,
+} from "./types";
+
 const G = new BcGcal();
 
 // New instances
@@ -21,7 +29,7 @@ const B = new BcCal();
 The Algorithm for calculation of Burmese Calendar (Myanmar Calendar) by Dr. Yan Naing Aye.
 Reference: https://cool-emerald.blogspot.com/2013/06/algorithm-program-and-calculation-of.html
  */
-export class BurmeseCal {
+class BurmeseCal {
 	private _lang: Language = "English";
 	private _year: number = new Date().getFullYear();
 	private month_ = new Date().getMonth();
@@ -98,6 +106,7 @@ export class BurmeseCal {
 			for (let j = 1; j <= days_InMonth; j++) {
 				const _month = i + 1;
 				// get jd
+				// biome-ignore lint/correctness/noUnusedVariables: only need jdn
 				const { jd, jdn } = G.dt2jd({
 					year: this._year,
 					month: _month,
@@ -622,3 +631,5 @@ export class BurmeseCal {
 		return G.calC({ ct, year, month, day });
 	}
 }
+
+export { BurmeseCal };

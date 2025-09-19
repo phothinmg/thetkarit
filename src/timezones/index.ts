@@ -5,7 +5,7 @@ import type { TimeZones } from "./tztypes";
  * @param timeZone The time zone to calculate the offset for.
  * @returns The offset in hours between the given time zone and the local time zone.
  */
-export function getOffset(timeZone: TimeZones): number {
+function getOffset(timeZone: TimeZones): number {
 	const now = new Date();
 	const tzString = now.toLocaleString("en-US", { timeZone });
 	const localString = now.toLocaleString("en-US");
@@ -14,3 +14,5 @@ export function getOffset(timeZone: TimeZones): number {
 
 	return -offset;
 }
+
+export { getOffset };

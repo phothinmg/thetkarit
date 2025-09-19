@@ -1,1 +1,3 @@
-export type Language = "English" | "Burmese";
+type Language = "English" | "Burmese";
+
+export type { Language };

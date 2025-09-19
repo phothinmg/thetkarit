@@ -1,4 +1,4 @@
-export const helpers = {
+const helpers = {
 	secularDiff(y: number) {
 		return Math.floor(y / 100) - Math.floor(y / 400) - 2;
 	},
@@ -48,3 +48,5 @@ export const helpers = {
 		return id === 6 ? 0 : id + 1;
 	},
 };
+
+export { helpers };

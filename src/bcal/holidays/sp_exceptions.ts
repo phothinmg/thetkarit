@@ -1,13 +1,14 @@
-export const special_holidays = [
+const special_holidays = [
 	// 2024
 	2460676,
 	// 2025
 	2460747, 2460749, 2460983, 2461036,
 ];
-
-export const special_sat = [
+const special_sat = [
 	// 2025
 	2460687, 2460757, 2460764, 2460988,
 	// 2026
 	2461044,
 ];
+
+export { special_holidays, special_sat };

@@ -1,1 +1,3 @@
-export const deepavali: number[] = [];
+const deepavali: number[] = [];
+
+export { deepavali };

@@ -1,1 +1,3 @@
-export const eidDays: number[] = [];
+const eidDays: number[] = [];
+
+export { eidDays };

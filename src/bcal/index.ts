@@ -34,7 +34,7 @@ type GetLeapYearData = {
 	err: number;
 };
 type EraIds = 1.1 | 1.2 | 1.3 | 2 | 3;
-export type JTB = {
+type JTB = {
 	/**
 	 * Burmese Year Types
 	 * 0=common, 1=little warhtat, 2=big warhtat
@@ -85,7 +85,7 @@ export type JTB = {
 };
 
 // calendar calculation
-export class BcCal {
+class BcCal {
 	/**
 	 * The length of a solar year in the Burmese calendar is defined as 1577917828/4320000 (365.2587565) days [Irwin, 1909].
 	 */
@@ -410,3 +410,6 @@ export class BcCal {
 		};
 	};
 }
+
+export type { JTB };
+export { BcCal };
