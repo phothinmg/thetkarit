@@ -1,4 +1,4 @@
-import { FME, WTE } from "./exceptions";
+import { FME, WTE } from "./exceptions/index.js";
 
 type GetWoNm = {
 	/**

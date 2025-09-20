@@ -23,7 +23,7 @@
     "email": "phothinmg@disroot.org",
     "url": "https://github.com/phothinmg"
   },
-  "license": "MIT",
+  "license": "ISC",
   "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
   "repository": {
     "type": "git",
@@ -36,5 +36,8 @@
     "@biomejs/biome": "^2.2.4",
     "@types/node": "^24.5.2",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "dependensia": "^0.0.7"
   }
 }

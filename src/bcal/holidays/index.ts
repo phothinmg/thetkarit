@@ -1,5 +1,5 @@
-import { deepavali } from "./deepavali";
-import { eidDays } from "./eidDays";
+import { deepavali } from "./deepavali.js";
+import { eidDays } from "./eidDays.js";
 import { special_holidays } from "./sp_exceptions";
 import { substituteHolidays } from "./substituteHolidays";
 
