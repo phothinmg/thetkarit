@@ -35,8 +35,8 @@ jobs:
     # TEMPORARY WORKAROUND: re-enable deprecated workflow commands
     # WARNING: This is unsafe and only a short-term mitigation.
     # Remove this env after you upgrade microsoft/msvc-code-analysis-action
-    env:
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    # env:
+    #   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
     steps:
       - name: Checkout repository
