@@ -35,8 +35,8 @@ jobs:
     # TEMPORARY WORKAROUND: re-enable deprecated workflow commands
     # WARNING: This is unsafe and only a short-term mitigation.
     # Remove this env after you upgrade microsoft/msvc-code-analysis-action
-    # env:
-    #   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
     steps:
       - name: Checkout repository
@@ -55,6 +55,7 @@ jobs:
         id: run-analysis
         with:
           cmakeBuildDirectory: ${{ env.build }}
+          buildConfiguration: ${{ env.config }}
           # Ruleset file that will determine what checks will be run
           ruleset: NativeRecommendedRules.ruleset
 

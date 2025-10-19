@@ -1,6 +1,8 @@
 # Thetkarit
 
-![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
+[![CMake on multiple platforms](https://github.com/phothinmg/thetkarit/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/phothinmg/thetkarit/actions/workflows/cmake-multi-platform.yml)
+
+<!-- ![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL) -->
 
 ## Overview
 
