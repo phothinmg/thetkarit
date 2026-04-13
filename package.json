@@ -33,7 +33,7 @@
     "url": "https://github.com/phothinmg/thetkarit/issues"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.9",
+    "@biomejs/biome": "^2.4.11",
     "@types/node": "^25.3.5",
     "typescript": "^6.0.2"
   },
