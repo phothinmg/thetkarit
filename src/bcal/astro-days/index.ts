@@ -1,3 +1,4 @@
+// cSpell:disable
 interface AstroOpts {
 	/**
 	 * Burmese Year
@@ -186,7 +187,7 @@ class BcAstro {
 		let s = 0;
 		if (bd === 8 || bd === 15 || bd === 23 || bd === lm) s = 1;
 		if (bd === 7 || bd === 14 || bd === 22 || bd === lm - 1) s = 2;
-		return { index: s, str: a[s] };
+		return { index: s, str: a[s] as string };
 	}
 	/**
 	 * Determine the direction of the Burmese naga according to the month.
@@ -206,7 +207,7 @@ class BcAstro {
 		let m1: number = bm;
 		if (bm <= 0) m1 = 4; //first warso is considered warso
 		const b: number = Math.floor((m1 % 12) / 3);
-		return { index: b, str: a[b] };
+		return { index: b, str: a[b] as string };
 	}
 	/**
 	 * Calculates the Mahabote of the given Burmese year.
@@ -233,7 +234,7 @@ class BcAstro {
 			"Puti",
 		];
 		const b: number = (by - wd) % 7;
-		return { index: b, str: a[b] };
+		return { index: b, str: a[b] as string };
 	}
 	/**
 	 * Calculates the Natkhat of the given Burmese year.
@@ -250,7 +251,7 @@ class BcAstro {
 	private _natkhat(by: number): { index: number; str: string } {
 		const a: string[] = ["Ogre", "Elf", "Human"];
 		const b: number = by % 3;
-		return { index: b, str: a[b] };
+		return { index: b, str: a[b] as string };
 	}
 	/**
 	 * Calculates the Yatyaza day of the given Burmese month and weekday.
@@ -268,7 +269,7 @@ class BcAstro {
 		const wd2: number =
 			(1 - Math.floor(m1 / 2) + (m1 % 2)) * (1 + 2 * (m1 % 2));
 		if (wd === wd1 || wd === wd2) y = 1;
-		return { index: y, str: a[y] };
+		return { index: y, str: a[y] as string };
 	}
 	/**
 	 * Calculates the Pyathada day of the given Burmese month and weekday.
@@ -285,7 +286,7 @@ class BcAstro {
 		const wda: number[] = [1, 3, 3, 0, 2, 1, 2];
 		if (m1 === 0 && wd === 4) p = 2; //afternoon pyathada
 		if (m1 === wda[wd]) p = 1;
-		return { index: p, str: a[p] };
+		return { index: p, str: a[p] as string };
 	}
 	private astros() {
 		const hs: string[] = [];

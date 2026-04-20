@@ -1,5 +1,6 @@
-import type { Language } from "../bcal/translate/types";
-import type { TimeZones } from "../timezones/tztypes";
+// cSpell:disable
+import type { Language } from "../bcal/translate/types.js";
+import type { TimeZones } from "../timezones/tztypes.js";
 
 // ----------------------------------------------------
 type DayViewOptions = {
@@ -392,15 +393,15 @@ type G2JOptions = {
 };
 
 export type {
-	G2JOptions,
-	ThinGyan,
-	TimeZones,
 	CalendarConvertOptions,
 	CalendarTypes,
-	YearViewObject,
-	YearViewOptions,
-	MonthViewObject,
-	MontnViewOptions,
 	DayViewObject,
 	DayViewOptions,
+	G2JOptions,
+	MonthViewObject,
+	MontnViewOptions,
+	ThinGyan,
+	TimeZones,
+	YearViewObject,
+	YearViewOptions,
 };

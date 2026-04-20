@@ -1,7 +1,8 @@
+// cSpell:disable
 import { deepavali } from "./deepavali.js";
 import { eidDays } from "./eidDays.js";
-import { special_holidays } from "./sp_exceptions";
-import { substituteHolidays } from "./substituteHolidays";
+import { special_holidays } from "./sp_exceptions.js";
+import { substituteHolidays } from "./substituteHolidays.js";
 
 interface HolidaysOpts {
 	/**

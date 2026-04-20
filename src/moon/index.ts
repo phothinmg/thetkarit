@@ -1,6 +1,7 @@
-import { BcGcal } from "../julian";
-import { getOffset } from "../timezones";
-import type { TimeZones } from "../timezones/tztypes";
+// cSpell:disable
+import { BcGcal } from "../julian/index.js";
+import { getOffset } from "../timezones/index.js";
+import type { TimeZones } from "../timezones/tztypes.js";
 
 const G = new BcGcal();
 
@@ -312,8 +313,8 @@ class BcMoon {
 		// find previous and next new moon days as ,jd
 		const nm1: number | undefined = rnms.find((i) => i < jdnow);
 		const nm2: number | undefined = rnms.find((i) => i > jdnow);
-		const nm3: number = pnms.length > 1 ? pnms[1] : pnms[0];
-		const nm4: number = nnms[0];
+		const nm3: number = pnms.length > 1 ? pnms[1] as number : pnms[0] as number;
+		const nm4: number = nnms[0] as number;
 		// previous
 		const pn_m: number = nm1 ? nm1 : nm3;
 		const p_n_m: number = pn_m + df;

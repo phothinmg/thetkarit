@@ -1,3 +1,4 @@
+// cSpell:disable
 export const timeZones = [
 	"Africa/Abidjan",
 	"Africa/Accra",

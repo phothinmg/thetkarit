@@ -1,3 +1,4 @@
+// cSpell:disable
 import { FME, WTE } from "./exceptions/index.js";
 
 type GetWoNm = {
@@ -141,7 +142,7 @@ class BcCal {
 		const found: number[] | undefined = FME.find((i: number[]) => i[0] === by);
 		let result = 0;
 		if (found !== undefined) {
-			result = found[1];
+			result = found[1] as number;
 		}
 		return result;
 	}
@@ -389,8 +390,8 @@ class BcCal {
 		// Sasana Year ( Buddhist Era - BE)
 		const ssy = by + 1182;
 		// --- string
-		const bm_str = this.BurmeseMonthName[bm];
-		const mp_str = this.MoonPhase[mp];
+		const bm_str = this.BurmeseMonthName[bm] as string;
+		const mp_str = this.MoonPhase[mp] as string;
 		const wsofm = yc.fm;
 		const tdkfm = wsofm + 89;
 		const warDwin = jdn >= wsofm && jdn <= tdkfm;

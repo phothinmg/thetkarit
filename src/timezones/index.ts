@@ -1,4 +1,5 @@
-import type { TimeZones } from "./tztypes";
+// cSpell:disable
+import type { TimeZones } from "./tztypes.js";
 
 /**
  * Calculates the offset of the given time zone base on Javascript Date.

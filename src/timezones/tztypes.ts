@@ -1,3 +1,4 @@
+// cSpell:disable
 export type TimeZones =
 	| "Africa/Abidjan"
 	| "Africa/Accra"
