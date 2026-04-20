@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "biome check --write src",
     "fmt": "biome format --write",
-    "build": "./build.js",
+    "build": "tsx build.ts",
     "noda": "./noda/noda.js"
   },
   "keywords": [

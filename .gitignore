@@ -1,10 +1,6 @@
 node_modules
 build
 dist
-cdn
-notes
-a.cpp
-a.js
-a.ts
-a.cjs
-build
+aa.ts
+aa.json
+bb.json

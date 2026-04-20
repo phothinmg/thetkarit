@@ -1,3 +1,4 @@
+// cSpell:disable
 /** @import {Res} from "./noda-type" */
 /** @import {TzInfo} from "./noda-type" */
 import fs from "node:fs";
