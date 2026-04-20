@@ -1,3 +1,4 @@
+// cSpell:disable
 const langs: string[][] = [
 	//
 	["Sunday", "တနင်္ဂနွေ"],

@@ -1,57 +1,66 @@
 {
-  "name": "thetkarit",
-  "version": "1.0.6",
-  "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
-  "type": "module",
-  "main": "dist/index.cjs",
-  "types": "dist/index.d.cts",
-  "module": "dist/index.mjs",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
-    }
-  },
-  "scripts": {
-    "lint": "biome check --write src",
-    "fmt": "biome format --write",
-    "build": "tsx build.ts",
-    "noda": "./noda/noda.js"
-  },
-  "keywords": [
-    "Gregorian calendar",
-    "Burmese calendar"
-  ],
-  "author": {
-    "name": "Pho Thin Mg",
-    "email": "phothinmg@disroot.org",
-    "url": "https://github.com/phothinmg"
-  },
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phothinmg/thetkarit.git"
-  },
-  "bugs": {
-    "url": "https://github.com/phothinmg/thetkarit/issues"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.4.12",
-    "@types/node": "^25.6.0",
-    "susee": "^1.5.2",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.3"
-  },
-  "files": [
-    "dist/**/*",
-    "LICENSE",
-    "README.md",
-    "package.json"
-  ]
+	"name": "thetkarit",
+	"version": "1.0.6",
+	"description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
+	"type": "module",
+	"main": "dist/index.cjs",
+	"types": "dist/index.d.cts",
+	"module": "dist/index.mjs",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"hooks:install": "bash scripts/install-hooks.sh",
+		"lint": "biome check --write src",
+		"fmt": "biome format --write",
+		"build": "tsx build.ts",
+		"noda": "./noda/noda.js",
+		"commit": "bash scripts/commit.sh",
+		"v:patch": "npm version patch --no-git-tag-version",
+		"v:minor": "npm version minor --no-git-tag-version",
+		"v:major": "npm version major --no-git-tag-version"
+	},
+	"keywords": [
+		"Gregorian calendar",
+		"Burmese calendar"
+	],
+	"author": {
+		"name": "Pho Thin Mg",
+		"email": "phothinmg@disroot.org",
+		"url": "https://github.com/phothinmg"
+	},
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/phothinmg/thetkarit.git"
+	},
+	"bugs": {
+		"url": "https://github.com/phothinmg/thetkarit/issues"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.12",
+		"@types/node": "^25.6.0",
+		"susee": "^1.5.2",
+		"tsx": "^4.21.0",
+		"typescript": "^6.0.3"
+	},
+	"files": [
+		"dist/**/*",
+		"LICENSE",
+		"README.md",
+		"package.json"
+	],
+	"publishConfig": {
+		"provenance": true,
+		"access": "public"
+	}
 }

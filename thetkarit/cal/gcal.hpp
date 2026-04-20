@@ -1,4 +1,4 @@
-
+// cSpell:disable
 /*
 Calculae the relations of  Gregorian calendar and Julian[Julian Calendar Date,Julian Date,Julian Day Number]
 

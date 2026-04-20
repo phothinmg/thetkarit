@@ -1,3 +1,4 @@
+// cSpell:disable
 #ifndef MCAL_HPP_
 #define MCAL_HPP_
 

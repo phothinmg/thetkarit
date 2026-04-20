@@ -1,3 +1,4 @@
+// cSpell:disable
 #ifndef THINGYAN_HPP_
 #define THINGYAN_HPP_
 

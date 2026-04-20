@@ -1,5 +1,6 @@
-import { langs } from "./langs";
-import type { Language } from "./types";
+// cSpell:disable
+import { langs } from "./langs.js";
+import type { Language } from "./types.js";
 
 class BcTranslate {
 	/**
@@ -20,7 +21,7 @@ class BcTranslate {
 			const aa: string[] = a.toString().split("");
 			const bb: string[] = [];
 			for (const a of aa) {
-				const x: string = b[Number.parseInt(a, 10)];
+				const x: string = b[Number.parseInt(a, 10)] as string;
 				bb.push(x);
 			}
 			r = bb.join("");
@@ -49,12 +50,12 @@ class BcTranslate {
 				const y: string[] = [];
 				for (const i of str) {
 					const z = langs.filter((k) => k[0] === i);
-					y.push(z[0][1]);
+					y.push((z[0] as string[])[1] as string);
 				}
 				r = y;
 			} else {
 				const x = langs.find((i) => i[0] === str);
-				r = x ? x[1] : "";
+				r = x ? (x[1] as string) : "";
 			}
 		}
 		return r;

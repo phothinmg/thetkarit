@@ -1,3 +1,4 @@
+// cSpell:disable
 #ifndef TRAN_CAL_H
 #define TRAN_CAL_H
 

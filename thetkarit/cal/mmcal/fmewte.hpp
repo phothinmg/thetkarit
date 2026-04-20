@@ -1,3 +1,4 @@
+// cSpell:disable
 #ifndef FMEWTE_HPP_
 #define FMEWTE_HPP_
 

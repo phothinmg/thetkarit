@@ -313,7 +313,8 @@ class BcMoon {
 		// find previous and next new moon days as ,jd
 		const nm1: number | undefined = rnms.find((i) => i < jdnow);
 		const nm2: number | undefined = rnms.find((i) => i > jdnow);
-		const nm3: number = pnms.length > 1 ? pnms[1] as number : pnms[0] as number;
+		const nm3: number =
+			pnms.length > 1 ? (pnms[1] as number) : (pnms[0] as number);
 		const nm4: number = nnms[0] as number;
 		// previous
 		const pn_m: number = nm1 ? nm1 : nm3;

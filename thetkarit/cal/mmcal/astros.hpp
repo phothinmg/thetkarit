@@ -1,3 +1,4 @@
+// cSpell:disable
 #ifndef ASTROS_HPP_
 #define ASTROS_HPP_
 

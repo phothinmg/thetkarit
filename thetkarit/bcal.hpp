@@ -1,3 +1,4 @@
+// cSpell:disable
 #ifndef BCAL_HPP_
 #define BCAL_HPP_
 

@@ -1,3 +1,4 @@
+// cSpell:disable
 #ifndef BHLDS_HPP_
 #define BHLDS_HPP_
 
