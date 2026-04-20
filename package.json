@@ -1,6 +1,6 @@
 {
   "name": "thetkarit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
   "type": "module",
   "main": "dist/index.cjs",
