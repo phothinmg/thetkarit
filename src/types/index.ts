@@ -252,7 +252,9 @@ type DayViewObject = {
 		 */
 		astro_days: string[];
 		/**
-		 * Array of Public Holidays
+		 * Array of public holidays.
+		 * Thingyan and Myanmar New Year are calculated; some variable-date
+		 * holidays (for example, Deepavali and Eid al-Adha) come from maintained date tables.
 		 */
 		public_holiday: string[];
 	};

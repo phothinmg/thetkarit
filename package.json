@@ -23,6 +23,7 @@
 		"lint": "biome check --write src",
 		"fmt": "biome format --write",
 		"build": "tsx build.ts",
+		"test": "tsx --test",
 		"noda": "./noda/noda.js",
 		"commit": "bash scripts/commit.sh",
 		"v:patch": "npm version patch --no-git-tag-version",

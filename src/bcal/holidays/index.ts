@@ -44,6 +44,9 @@ interface HolidaysOpts {
 }
 
 //-- Holidays
+// Variable-date holidays are handled in two ways:
+// Thingyan and Myanmar New Year are calculated algorithmically,
+// while Deepavali and Eid al-Adha are resolved from maintained date tables.
 export class BcHolidays {
 	public holidaysArray: string[];
 	private _year: number;
@@ -197,6 +200,7 @@ export class BcHolidays {
 			}
 		}
 	}
+	// Eid dates are maintained as explicit Julian day numbers.
 	private eid_day(jdn: number, hs: string[]) {
 		if (eidDays.includes(jdn)) {
 			hs.push("Eid al-Adha");
@@ -207,6 +211,7 @@ export class BcHolidays {
 			hs.push("Holiday");
 		}
 	}
+	// Deepavali dates are maintained as explicit Julian day numbers.
 	private de_pavali(jdn: number, hs: string[]) {
 		if (deepavali.includes(jdn)) {
 			hs.push("Deepavali");

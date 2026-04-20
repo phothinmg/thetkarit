@@ -1,24 +1,26 @@
 # Thetkarit
 
-[![CMake on multiple platforms](https://github.com/phothinmg/thetkarit/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/phothinmg/thetkarit/actions/workflows/cmake-multi-platform.yml)
-
-<!-- ![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL) -->
+[![CMake on multiple platforms](https://github.com/phothinmg/thetkarit/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/phothinmg/thetkarit/actions/workflows/cmake-multi-platform.yml) ![GitHub License](https://img.shields.io/github/license/phothinmg/thetkarit) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/msvc.yml?logo=cplusplus&label=MSVC%20Code%20Analysis) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/cmake-multi-platform.yml?logo=cmake&label=CMake%20on%20multiple%20platforms) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/phothinmg/thetkarit/codeql.yml?logo=github&label=CodeQL)
 
 ## Overview
 
-The Burmese calendar calculations focus on Burmese calendar and astronomy studies and are still in progress.
+This project focuses on Burmese calendar calculations and astronomy studies and is still under active development.
 
-Most of the code here is in the public domain or released under an open source license, though some code and/or data may be under other copyright (usually an open source license), see [Resources](#resources).
+Most of the code in this repository is in the public domain or released under an open source license. However, some code and/or data may use different copyright terms (usually still an open source license). See [Resources](#resources).
+
+<!-- cSpell:disable -->
+
+Note: Variable-date holidays are handled in two ways: Thingyan and Myanmar New Year are calculated algorithmically, while holidays such as "Deepavali" and "Eid al-Adha" use maintained date tables.
 
 ---
 
 ## C++
 
-### Useage
+### ESM (JavaScript)
 
-Download latest `thetkarit.zip` from <https://github.com/phothinmg/thetkarit/releases/latest/download/thetkarit.zip>.
+Download the latest `thetkarit.zip` from <https://github.com/phothinmg/thetkarit/releases/latest/download/thetkarit.zip>.
 
-```cpp
+````cpp
 #include "thetkarit/bcal.hpp" // include bcal header
 #include <iostream>
 #include <iomanip>
@@ -48,11 +50,11 @@ Moon Phase: Waxing
 Fortnight Day: 12
 Day in Burmese Month: 12
 Public Holidays: Union Day
-```
+````
 
-### Example C++ program
+### Build and Run the C++ Example
 
-Clone the repository and build it using cmake, and run;
+Clone the repository, build it with CMake, and run the example:
 
 ```bash
 git clone https://github.com/phothinmg/thetkarit.git
@@ -61,7 +63,83 @@ mkdir build
 cd build
 cmake ..
 make
-./bcal # Running example
+./bcal # Run the example
+```
+
+---
+
+## Node.js
+
+### Install
+
+```bash
+npm install thetkarit
+```
+
+### Usage
+
+```js
+import { BurmeseCal } from "thetkarit";
+
+const cal = new BurmeseCal();
+const day = cal.dayView({
+  year: 2025,
+  month: 2,
+  day: 12,
+  lang: "English",
+});
+
+console.log("Sasana Year:", day.burmese_cal.sasana_year.id);
+console.log("Burmese Year:", day.burmese_cal.burmese_year.id);
+console.log("Burmese Month:", day.burmese_cal.burmese_month.str);
+console.log("Moon Phase:", day.burmese_cal.moon_phase.str);
+console.log("Fortnight Day:", day.burmese_cal.fortnight_day.id);
+console.log("Day in Burmese Month:", day.burmese_cal.burmese_day.id);
+console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
+```
+
+### TypeScript
+
+```ts
+import { BurmeseCal } from "thetkarit";
+
+const cal = new BurmeseCal();
+const day = cal.dayView({
+  year: 2025,
+  month: 2,
+  day: 12,
+  lang: "English",
+});
+
+console.log("Sasana Year:", day.burmese_cal.sasana_year.id);
+console.log("Burmese Year:", day.burmese_cal.burmese_year.id);
+console.log("Burmese Month:", day.burmese_cal.burmese_month.str);
+console.log("Moon Phase:", day.burmese_cal.moon_phase.str);
+console.log("Fortnight Day:", day.burmese_cal.fortnight_day.id);
+console.log("Day in Burmese Month:", day.burmese_cal.burmese_day.id);
+console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
+```
+
+### CommonJS
+
+```js
+const { BurmeseCal } = require("thetkarit");
+
+const cal = new BurmeseCal();
+const day = cal.dayView({
+  year: 2025,
+  month: 2,
+  day: 12,
+  lang: "English",
+});
+
+console.log("Sasana Year:", day.burmese_cal.sasana_year.id);
+console.log("Burmese Year:", day.burmese_cal.burmese_year.id);
+console.log("Burmese Month:", day.burmese_cal.burmese_month.str);
+console.log("Moon Phase:", day.burmese_cal.moon_phase.str);
+console.log("Fortnight Day:", day.burmese_cal.fortnight_day.id);
+console.log("Day in Burmese Month:", day.burmese_cal.burmese_day.id);
+console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 ```
 
 ---
@@ -70,7 +148,7 @@ make
 
 ### Burmese Calendar
 
-- The Algorithm for calculation of Burmese Calendar (Myanmar Calendar) and astrological calendar days by Dr. Yan Naing Aye.
+- The algorithm for calculating the Burmese Calendar (Myanmar Calendar) and astrological calendar days by Dr. Yan Naing Aye.
 
 - References:
 
@@ -80,7 +158,7 @@ make
 
 ### Julian Date and Moon Phases
 
-- A collection of astronomy related programs, algorithms, tutorials, data and implementation of the algorithm from Meeus' Astronomical Algorithms for computing the dates of the phases of the Moon by Greg Miller (<gmiller@gregmiller.net>).
+- A collection of astronomy-related programs, algorithms, tutorials, and data, including an implementation of the algorithm from Meeus' _Astronomical Algorithms_ for computing the dates of the Moon's phases, by Greg Miller (<gmiller@gregmiller.net>).
 
 - Reference: <https://www.celestialprogramming.com/>
 
