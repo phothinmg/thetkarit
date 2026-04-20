@@ -16,8 +16,6 @@ Note: Variable-date holidays are handled in two ways: Thingyan and Myanmar New Y
 
 ## C++
 
-### ESM (JavaScript)
-
 Download the latest `thetkarit.zip` from <https://github.com/phothinmg/thetkarit/releases/latest/download/thetkarit.zip>.
 
 ````cpp
@@ -76,7 +74,7 @@ make
 npm install thetkarit
 ```
 
-### Usage
+### ESM (JavaScript)
 
 ```js
 import { BurmeseCal } from "thetkarit";
