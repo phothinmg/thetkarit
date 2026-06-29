@@ -4,3 +4,5 @@ dist
 aa.ts
 aa.json
 bb.json
+vendor/bundle
+.bundle

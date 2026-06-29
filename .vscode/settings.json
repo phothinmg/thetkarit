@@ -1,3 +1,13 @@
 {
-	"C_Cpp.errorSquiggles": "enabled"
+	"C_Cpp.errorSquiggles": "enabled",
+	// Keep RuboCop linting enabled (optional) and run via Bundler
+	"ruby.lint": {
+		"rubocop": true
+	},
+	"ruby.lint.rubocop": {
+		"useBundler": true,
+		"lintOnSave": true,
+		"config": ".rubocop.yml"
+	},
+	"cSpell.words": ["mahabote"]
 }
