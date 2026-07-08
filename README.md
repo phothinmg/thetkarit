@@ -1,4 +1,10 @@
-# Thetkarit
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
+<div align="center">
+<img src="https://susee.phothin.dev/logo/thetkarit/logo.webp" width="160" height="160" alt="susee" />
+  <h1>Thetkarit</h1>
+</div>
+<!-- markdownlint-enable MD033 -->
 
 ## Overview
 
