@@ -77,9 +77,9 @@ npm install thetkarit
 ### ESM (JavaScript)
 
 ```js
-import { BurmeseCal } from "thetkarit";
+import Thetkarit from "thetkarit";
 
-const cal = new BurmeseCal();
+const cal = new Thetkarit.BurmeseCal();
 const day = cal.dayView({
   year: 2025,
   month: 2,
@@ -99,9 +99,9 @@ console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 ### TypeScript
 
 ```ts
-import { BurmeseCal } from "thetkarit";
+import Thetkarit from "thetkarit";
 
-const cal = new BurmeseCal();
+const cal = new Thetkarit.BurmeseCal();
 const day = cal.dayView({
   year: 2025,
   month: 2,
@@ -121,9 +121,9 @@ console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 ### CommonJS
 
 ```js
-const { BurmeseCal } = require("thetkarit");
+const Thetkarit = require("thetkarit");
 
-const cal = new BurmeseCal();
+const cal = new Thetkarit.BurmeseCal();
 const day = cal.dayView({
   year: 2025,
   month: 2,
@@ -142,6 +142,8 @@ console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 
 ---
 
+## TypeScript API
+
 ## Resources
 
 ### Burmese Calendar
@@ -159,5 +161,13 @@ console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 - A collection of astronomy-related programs, algorithms, tutorials, and data, including an implementation of the algorithm from Meeus' _Astronomical Algorithms_ for computing the dates of the Moon's phases, by Greg Miller (<gmiller@gregmiller.net>).
 
 - Reference: <https://www.celestialprogramming.com/>
+
+### Local sunrise and sunset times
+
+- Based on the algorithm by Rui Okada: <https://gist.github.com/ruiokada/b28076d4911820ddcbbc>
+
+- Computation references:
+  - <https://en.wikipedia.org/wiki/Julian_day#Converting_Julian_or_Gregorian_calendar_date_to_Julian_Day_Number>
+  - <https://en.wikipedia.org/wiki/Sunrise_equation#Complete_calculation_on_Earth>
 
 ---
