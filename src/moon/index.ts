@@ -5,8 +5,16 @@ import type { TimeZones } from "../timezones/tztypes.js";
 
 const G = new BcGcal();
 
-// phase - 0 = new, .25 = first quarter, .5 = full, .75 = last quarter, all other values are invalid
-type MoonPhases = 0 | 0.25 | 0.5 | 0.75;
+//
+/**
+ * phase:
+ *  0 = new ,
+ *  0.25 = first quarter ,
+ *  0.5 = full ,
+ *  0.75 = last quarter ,
+ *  all other values are invalid
+ */
+type _MoonPhases = 0 | 0.25 | 0.5 | 0.75;
 
 class BcMoon {
 	/**
@@ -59,7 +67,7 @@ class BcMoon {
 	 * @returns The Julian Ephemeris Day (JED) corresponding to the specified moon phase
 	 *          within the given cycle.
 	 */
-	private phaseDate(cycle: number, phase: MoonPhases): number {
+	private phaseDate(cycle: number, phase: _MoonPhases): number {
 		//From Meeus ch49
 		const k = cycle + phase;
 
@@ -247,7 +255,7 @@ class BcMoon {
 	 * @returns An object containing the Julian Dates for the new moon, first quarter,
 	 *          full moon, and last quarter phases.
 	 */
-	public moon_phases(year: number, month: number) {
+	public moonPhases(year: number, month: number) {
 		const cy: number = this.getCycle(year, month);
 		const _n: number = this.phaseDate(cy, 0);
 		const _fst: number = this.phaseDate(cy, 0.25);
@@ -267,11 +275,11 @@ class BcMoon {
 	 * @param tz - Optional timezone string. Defaults to "Asia/Yangon".
 	 * @returns An array of 12 strings, each representing the date of the full moon for each month of the year.
 	 */
-	public fullmoon_day(year: number, tz?: TimeZones): string[] {
+	public fullmoonDay(year: number, tz?: TimeZones): string[] {
 		const ttz: TimeZones = tz ?? "GMT";
 		const phases = new Array(12)
 			.fill(0)
-			.map((_, i) => this.moon_phases(year, i));
+			.map((_, i) => this.moonPhases(year, i));
 		return phases.map((p) => G.jd2dtStr(p.fullMoon, ttz));
 	}
 	/**
@@ -281,7 +289,7 @@ class BcMoon {
 	 * @returns Object containing duration, moon age, previous and next new moon days,
 	 * and the full moon day.
 	 */
-	public moon_age(tz?: TimeZones): {
+	public moonAge(tz?: TimeZones): {
 		duration: number;
 		moonAge: number;
 		previousNewMoon: string;
@@ -300,13 +308,13 @@ class BcMoon {
 		// sometime 2 new moon days in one month , store nm to an array
 		// recent month NMs
 		const rnms: number[] = [];
-		rnms.push(this.moon_phases(y, rm).newMoon);
+		rnms.push(this.moonPhases(y, rm).newMoon);
 		// prev month NMs
 		const pnms: number[] = [];
-		pnms.push(this.moon_phases(y, pm).newMoon);
+		pnms.push(this.moonPhases(y, pm).newMoon);
 		// next month NMs
 		const nnms: number[] = [];
-		nnms.push(this.moon_phases(y, nm).newMoon);
+		nnms.push(this.moonPhases(y, nm).newMoon);
 		// set jd for now , utc + tz fraction of this
 
 		const jdnow = G.jdUtcNow() + df;
@@ -337,7 +345,7 @@ class BcMoon {
 		// find full moon
 		const fma: number[] = [];
 		for (let i = pm; i <= nm; i++) {
-			fma.push(this.moon_phases(y, i).fullMoon + df);
+			fma.push(this.moonPhases(y, i).fullMoon + df);
 		}
 		let fm = 0;
 		for (const f of fma) {
@@ -370,8 +378,8 @@ class BcMoon {
 	 * @returns An object containing the string representations of the
 	 * new moon, first quarter, full moon, and last quarter dates.
 	 */
-	public moon_phaseStr(year: number, month: number) {
-		const mps = this.moon_phases(year, month);
+	public moonPhaseStr(year: number, month: number) {
+		const mps = this.moonPhases(year, month);
 		return {
 			newMoon: G.jd2dtStr(mps.newMoon),
 			firstQuarter: G.jd2dtStr(mps.firstQuarter),
@@ -387,7 +395,7 @@ class BcMoon {
 	 * @param month - The month for which to calculate moon phases [0=Jan,...,11=Dec]
 	 * @returns - Meenus Lunation Number [LN]
 	 */
-	public meenus_ln(year: number, month: number) {
+	public meenusLunationNumber(year: number, month: number): number {
 		return this.getCycle(year, month);
 	}
 	/**
@@ -398,7 +406,7 @@ class BcMoon {
 	 * @param month  - The month for which to calculate moon phases [0=Jan,...,11=Dec]
 	 * @returns - Brown Lunation Number [BLN] [BLN = LN + 953]
 	 */
-	public brown_ln(year: number, month: number) {
+	public brownLunationNumber(year: number, month: number): number {
 		return this.getCycle(year, month) + 953;
 	}
 	/**
@@ -409,10 +417,10 @@ class BcMoon {
 	 * @param month  - The month for which to calculate moon phases [0=Jan,...,11=Dec]
 	 * @returns Thai Lunation Number [TLN] [TLN = LN + 16843]
 	 */
-	public thai_ln(year: number, month: number) {
+	public thaiLunationNumber(year: number, month: number): number {
 		return this.getCycle(year, month) + 16843;
 	}
 }
 
-export type { MoonPhases };
+export type { _MoonPhases };
 export { BcMoon };

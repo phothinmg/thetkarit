@@ -24,7 +24,7 @@ type DayViewOptions = {
 	lang?: Language;
 };
 //-----
-type MontnViewOptions = {
+type MonthViewOptions = {
 	/**
 	 * Gregorian year
 	 */
@@ -401,7 +401,7 @@ export type {
 	DayViewOptions,
 	G2JOptions,
 	MonthViewObject,
-	MontnViewOptions,
+	MonthViewOptions,
 	ThinGyan,
 	TimeZones,
 	YearViewObject,

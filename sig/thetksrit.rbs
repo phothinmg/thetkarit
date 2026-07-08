@@ -1,6 +1,0 @@
-module Thetkarit
-  VERSION: String
-  module Astro
-    def mahabote: (Integer burmese_year,Integer week_day_index) -> Hash[Symbol,(Integer|String)]
-  end
-end
