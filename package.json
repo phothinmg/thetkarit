@@ -28,7 +28,8 @@
 		"commit": "bash scripts/commit.sh",
 		"v:patch": "npm version patch --no-git-tag-version",
 		"v:minor": "npm version minor --no-git-tag-version",
-		"v:major": "npm version major --no-git-tag-version"
+		"v:major": "npm version major --no-git-tag-version",
+		"coverage": "tsx __tests__/lcov/index.ts"
 	},
 	"keywords": [
 		"Gregorian calendar",
@@ -63,8 +64,5 @@
 	"publishConfig": {
 		"provenance": true,
 		"access": "public"
-	},
-	"allowScripts": {
-		"esbuild@0.28.1": true
 	}
 }

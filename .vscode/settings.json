@@ -9,5 +9,5 @@
 		"lintOnSave": true,
 		"config": ".rubocop.yml"
 	},
-	"cSpell.words": ["mahabote", "Okada", "suntime"]
+	"cSpell.words": ["bcal", "mahabote", "Meeus", "Okada", "suntime"]
 }

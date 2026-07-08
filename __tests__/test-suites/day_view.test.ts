@@ -1,12 +1,11 @@
 // cSpell:disable
 import { describe, it } from "node:test";
 import assert from "node:assert";
-import { BurmeseCal } from "../../src/index.js";
-import type { DayViewOptions } from "../../src/types/index.js";
+import Thetkarit from "../../src/index.js";
 
 describe("Burmese Calendar Day View Tests", () => {
-	const cal = new BurmeseCal();
-	const dvOptions: DayViewOptions = {
+	const cal = new Thetkarit.BurmeseCalendar();
+	const dvOptions: Thetkarit.DayOptions = {
 		year: 2026,
 		month: 4,
 		day: 1,
