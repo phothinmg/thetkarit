@@ -5,8 +5,9 @@
  *
  * IANA IANA Version : 2026b
  *
- * Last updated : Thu Jul 09 2026
+ * Last updated : Fri Jul 10 2026
  */
+
 import type { _TimeZone } from "./tztypes.js";
 
 export type _TimeZonesInfo = {
@@ -18,8 +19,7 @@ export type _TimeZonesInfo = {
 	offsets: string[];
 	currentOffset: number;
 };
-
-export const _timeZonesInfo: _TimeZonesInfo[] = [
+export const _timeZonesInfo = [
 	{
 		names: [
 			"Africa/Abidjan",

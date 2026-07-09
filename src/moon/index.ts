@@ -1,9 +1,8 @@
 // cSpell:disable
-import { BcGcal } from "../julian/index.js";
-import { getOffset } from "../timezones/index.js";
-import type { TimeZones } from "../timezones/tztypes.js";
+import { Gcal } from "../calendar/gcal.js";
+import tzone from "../timezones/index.js";
 
-const G = new BcGcal();
+const G = new Gcal();
 
 //
 /**
@@ -275,8 +274,8 @@ class BcMoon {
 	 * @param tz - Optional timezone string. Defaults to "Asia/Yangon".
 	 * @returns An array of 12 strings, each representing the date of the full moon for each month of the year.
 	 */
-	public fullmoonDay(year: number, tz?: TimeZones): string[] {
-		const ttz: TimeZones = tz ?? "GMT";
+	public fullmoonDay(year: number, tz?: tzone.TimeZone): string[] {
+		const ttz: tzone.TimeZone = tz ?? "GMT";
 		const phases = new Array(12)
 			.fill(0)
 			.map((_, i) => this.moonPhases(year, i));
@@ -289,7 +288,7 @@ class BcMoon {
 	 * @returns Object containing duration, moon age, previous and next new moon days,
 	 * and the full moon day.
 	 */
-	public moonAge(tz?: TimeZones): {
+	public moonAge(tz?: tzone.TimeZone): {
 		duration: number;
 		moonAge: number;
 		previousNewMoon: string;
@@ -298,7 +297,7 @@ class BcMoon {
 	} {
 		const _tzz = tz ?? "GMT";
 		// tz offset of this to fraction of day
-		const df = getOffset(_tzz) / 24;
+		const df = tzone.zoneOffset(_tzz) / 24;
 		// set time zone as GMT
 		const y = G.utcDtNow().year;
 		const rm = G.utcDtNow().month + 1;

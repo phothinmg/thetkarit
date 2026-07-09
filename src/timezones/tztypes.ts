@@ -5,7 +5,7 @@
  *
  * IANA IANA Version : 2026b
  *
- * Last updated : Thu Jul 09 2026
+ * Last updated : Fri Jul 10 2026
  */
 
 export type _TimeZone =

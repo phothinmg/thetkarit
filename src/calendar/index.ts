@@ -21,7 +21,9 @@ class Tcal {
 		return y === this._year && m === this.month_ && d === this._date;
 	}
 	constructor(G: Gcal, B: Bcal, T: BcTranslate) {
-		(this._G = G), (this._B = B), (this._T = T);
+		this._G = G;
+		this._B = B;
+		this._T = T;
 	}
 	private cal() {
 		// days of each month in this._langyear

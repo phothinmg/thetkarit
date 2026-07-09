@@ -68,9 +68,9 @@ fetch(url)
 		const zz = aa.map((i) => `"${i}"`);
 		const cc = zz.join(" | ");
 		const xx = [...zz];
-		const namesText = `${banner}\nexport const _timeZones = [${xx}]`;
+		const namesText = `${banner}\n${typesText}\nexport const _timeZones = [${xx}]`;
 		const _bb = `${banner}\nexport type _TimeZone = ${cc}`;
-		const info_text = `${banner}\nexport const _timeZonesInfo = ${JSON.stringify(
+		const info_text = `${banner}\n${tzInfoText}\nexport const _timeZonesInfo = ${JSON.stringify(
 			timeZonesInfo,
 			null,
 			2,
