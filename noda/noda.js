@@ -12,7 +12,7 @@ function strNum(str) {
 	const _f = Number(b.slice(1));
 	return e === "-" ? -(_f + _d) : _f + _d;
 }
-const ianaVersion = "2026b",
+const ianaVersion = "2026c",
 	url = `https://nodatime.org/TimeZones?version=${ianaVersion}&format=json`;
 
 const modifiedDate = new Date().toDateString();
@@ -68,9 +68,9 @@ fetch(url)
 		const zz = aa.map((i) => `"${i}"`);
 		const cc = zz.join(" | ");
 		const xx = [...zz];
-		const namesText = `${banner}\n${typesText}\nexport const _timeZones = [${xx}]`;
+		const namesText = `${banner}\n${typesText}\nexport const _timeZones: _TimeZone[] = [${xx}]`;
 		const _bb = `${banner}\nexport type _TimeZone = ${cc}`;
-		const info_text = `${banner}\n${tzInfoText}\nexport const _timeZonesInfo = ${JSON.stringify(
+		const info_text = `${banner}\n${tzInfoText}\nexport const _timeZonesInfo: _TimeZonesInfo[] = ${JSON.stringify(
 			timeZonesInfo,
 			null,
 			2,

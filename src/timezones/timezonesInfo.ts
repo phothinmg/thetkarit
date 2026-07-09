@@ -3,7 +3,7 @@
  * IANA (TZDB) time zone information
  * https://nodatime.org/TimeZones
  *
- * IANA IANA Version : 2026b
+ * IANA IANA Version : 2026c
  *
  * Last updated : Fri Jul 10 2026
  */
@@ -19,7 +19,7 @@ export type _TimeZonesInfo = {
 	offsets: string[];
 	currentOffset: number;
 };
-export const _timeZonesInfo = [
+export const _timeZonesInfo: _TimeZonesInfo[] = [
 	{
 		names: [
 			"Africa/Abidjan",

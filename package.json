@@ -22,7 +22,7 @@
 		"hooks:install": "bash scripts/install-hooks.sh",
 		"lint": "biome check --write src",
 		"fmt": "biome format --write",
-		"build": "tsx build.ts",
+		"build": "susee",
 		"test": "tsx --test",
 		"noda": "node noda/noda.js",
 		"commit": "bash scripts/commit.sh",
