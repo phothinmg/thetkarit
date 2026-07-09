@@ -1,5 +1,14 @@
 // cSpell:disable
-export type TimeZones =
+/**
+ * IANA (TZDB) time zone information
+ * https://nodatime.org/TimeZones
+ *
+ * IANA IANA Version : 2026b
+ *
+ * Last updated : Thu Jul 09 2026
+ */
+
+export type _TimeZone =
 	| "Africa/Abidjan"
 	| "Africa/Accra"
 	| "Africa/Bamako"
@@ -107,6 +116,7 @@ export type TimeZones =
 	| "America/Chihuahua"
 	| "America/Ciudad_Juarez"
 	| "America/Costa_Rica"
+	| "America/Coyhaique"
 	| "America/Cuiaba"
 	| "America/Danmarkshavn"
 	| "America/Dawson"

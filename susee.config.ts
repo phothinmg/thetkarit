@@ -1,5 +1,5 @@
 import type { SuSeeConfig } from "susee";
-
+import { suseeTerser } from "@suseejs/terser-plugin";
 const config: SuSeeConfig = {
 	// Array of entry point objects.
 	// ----------------------------
@@ -14,7 +14,7 @@ const config: SuSeeConfig = {
 			exportPath: ".", // "." stands for the main export path and can be set to "./foo", "./bar", etc.
 			// (optional) Output module formats ["commonjs"] or ["esm", "commonjs"], default: ["esm"].
 			// Uncomment the following line to edit.
-			//format: ["esm"],
+			format: ["esm", "commonjs"],
 			// (optional) Rename duplicate declarations, default: true.
 			// Uncomment the following line to edit.
 			//renameDuplicates: true,
@@ -23,7 +23,7 @@ const config: SuSeeConfig = {
 			//tsconfigFilePath: undefined,
 			// (optional) Array of susee plugins, default: [].
 			// Uncomment the following line to edit.
-			//plugins: [],
+			plugins: [suseeTerser()],
 			// (optional) Warning messages, if it true and warning message exist(1), default: false.
 			// Uncomment the following line to edit.
 			//warning: false,

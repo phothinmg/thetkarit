@@ -1,5 +1,14 @@
 // cSpell:disable
-export const timeZones = [
+/**
+ * IANA (TZDB) time zone information
+ * https://nodatime.org/TimeZones
+ *
+ * IANA IANA Version : 2026b
+ *
+ * Last updated : Thu Jul 09 2026
+ */
+import type { _TimeZone } from "./tztypes.js";
+export const _timeZones: _TimeZone[] = [
 	"Africa/Abidjan",
 	"Africa/Accra",
 	"Africa/Bamako",
@@ -107,6 +116,7 @@ export const timeZones = [
 	"America/Chihuahua",
 	"America/Ciudad_Juarez",
 	"America/Costa_Rica",
+	"America/Coyhaique",
 	"America/Cuiaba",
 	"America/Danmarkshavn",
 	"America/Dawson",

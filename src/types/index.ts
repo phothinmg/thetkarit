@@ -1,6 +1,7 @@
 // cSpell:disable
-import type { Language } from "../bcal/translate/types.js";
-import type { TimeZones } from "../timezones/tztypes.js";
+import type { Language } from "../calendar/bcal/translate/types.js";
+
+// import type { TimeZone } from "../timezones/tztypes.js";
 
 // ----------------------------------------------------
 type DayViewOptions = {
@@ -391,7 +392,7 @@ type G2JOptions = {
 	hour?: number;
 	minutes?: number;
 	seconds?: number;
-	tz?: TimeZones;
+	tz?: TimeZone;
 };
 
 export type {
@@ -403,7 +404,7 @@ export type {
 	MonthViewObject,
 	MonthViewOptions,
 	ThinGyan,
-	TimeZones,
+	TimeZone,
 	YearViewObject,
 	YearViewOptions,
 };

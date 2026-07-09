@@ -24,7 +24,7 @@
 		"fmt": "biome format --write",
 		"build": "tsx build.ts",
 		"test": "tsx --test",
-		"noda": "./noda/noda.js",
+		"noda": "node noda/noda.js",
 		"commit": "bash scripts/commit.sh",
 		"v:patch": "npm version patch --no-git-tag-version",
 		"v:minor": "npm version minor --no-git-tag-version",
@@ -50,6 +50,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.3",
+		"@suseejs/terser-plugin": "^0.0.6",
 		"@types/node": "^26.1.1",
 		"susee": "^1.5.5",
 		"tsx": "^4.23.0",
@@ -64,5 +65,8 @@
 	"publishConfig": {
 		"provenance": true,
 		"access": "public"
+	},
+	"allowScripts": {
+		"esbuild@0.28.1": true
 	}
 }

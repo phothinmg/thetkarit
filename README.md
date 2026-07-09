@@ -6,6 +6,8 @@
 </div>
 <!-- markdownlint-enable MD033 -->
 
+[![codecov](https://codecov.io/gh/phothinmg/thetkarit/graph/badge.svg?token=UQwT32ZB2Z)](https://codecov.io/gh/phothinmg/thetkarit)
+
 ## Overview
 
 This project focuses on Burmese calendar calculations and astronomy studies and is still under active development.

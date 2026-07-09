@@ -86,7 +86,7 @@ type JTB = {
 };
 
 // calendar calculation
-class BcCal {
+class Bcal {
 	/**
 	 * The length of a solar year in the Burmese calendar is defined as 1577917828/4320000 (365.2587565) days [Irwin, 1909].
 	 */
@@ -413,4 +413,4 @@ class BcCal {
 }
 
 export type { JTB };
-export { BcCal };
+export { Bcal };

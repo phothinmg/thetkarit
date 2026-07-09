@@ -1,6 +1,7 @@
 // cSpell:disable
+
+import type { CTP } from "../../types.js";
 import { langs } from "./langs.js";
-import type { Language } from "./types.js";
 
 class BcTranslate {
 	/**
@@ -11,8 +12,8 @@ class BcTranslate {
 	 * @param lang The language to translate the number into. Defaults to English.
 	 * @returns The translated number as a string.
 	 */
-	public translateNum(a: number, lang?: Language): string | number {
-		const l: Language = lang ?? "English";
+	public translateNum(a: number, lang?: CTP.Language): string | number {
+		const l: CTP.Language = lang ?? "English";
 		const b: string[] = ["၀", "၁", "၂", "၃", "၄", "၅", "၆", "၇", "၈", "၉"];
 		let r: number | string;
 		if (l === "English") {
@@ -40,8 +41,8 @@ class BcTranslate {
 	 * @returns The translated string or array of strings.
 	 */
 
-	public translateStr(str: string | string[], lang?: Language) {
-		const l: Language = lang ?? "English";
+	public translateStr(str: string | string[], lang?: CTP.Language) {
+		const l: CTP.Language = lang ?? "English";
 		let r: string | string[] = "";
 		if (l === "English") {
 			r = str;

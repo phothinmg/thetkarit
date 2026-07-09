@@ -1,15 +1,15 @@
 // cSpell:disable
-import { helpers } from "../helpers/index.js";
-import { getOffset } from "../timezones/index.js";
-import type { TimeZones } from "../timezones/tztypes.js";
-import type { CalendarConvertOptions, G2JOptions } from "../types/index.js";
+
+import tzone from "../timezones/index.js";
+import { helpers } from "./helpers.js";
+import type { CTP } from "./types.js";
 
 type IsG = "isg" | "isp" | "isnot";
 
 // A collection of astronomy related programs, algorithms, tutorials, and data by Greg Miller (gmiller@gregmiller.net).
 // Reference: https://www.celestialprogramming.com/
 
-class BcGcal {
+class Gcal {
 	private checkGregorian(y: number, m: number, d: number): IsG {
 		if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d <= 4)))) {
 			return "isp";
@@ -59,12 +59,12 @@ class BcGcal {
 		minutes = 0,
 		seconds = 0,
 		tz = "GMT",
-	}: G2JOptions): { jd: number; jdn: number } {
+	}: CTP.G2JOptions): { jd: number; jdn: number } {
 		const result = this.checkGregorian(year, month, day);
 		if (result === "isnot") {
 			day = 4;
 		}
-		const tzos = getOffset(tz) / 24;
+		const tzos = tzone.zoneOffset(tz) / 24;
 		// To decimal fraction of the day
 		// h , m , s
 		const def = (hour - 12) / 24.0 + minutes / 1440.0 + seconds / 86400.0;
@@ -99,7 +99,7 @@ class BcGcal {
 	 */
 	public jd2dt(
 		jd: number,
-		tz: TimeZones = "GMT",
+		tz: tzone.TimeZone = "GMT",
 	): {
 		year: number;
 		month: number;
@@ -108,7 +108,7 @@ class BcGcal {
 		minutes: number;
 		seconds: number;
 	} {
-		const tzz = getOffset(tz);
+		const tzz = tzone.zoneOffset(tz);
 		const jdd = jd + tzz / 24;
 
 		// JDN to Year Month Date
@@ -202,8 +202,8 @@ class BcGcal {
 	 * Return the current Julian Date in the time zone of this instance.
 	 * @returns The current Julian Date in the time zone of this instance.
 	 */
-	public jdNow(tz: TimeZones) {
-		const tzz = getOffset(tz);
+	public jdNow(tz: tzone.TimeZone) {
+		const tzz = tzone.zoneOffset(tz);
 		return this.jdUtcNow() + tzz / 24;
 	}
 	/**
@@ -216,7 +216,7 @@ class BcGcal {
 	 *   - day: The day to be converted [1-31].
 	 * @returns An object with the year, month and day of the converted date.
 	 */
-	public calC({ ct, year, month, day }: CalendarConvertOptions) {
+	public calC({ ct, year, month, day }: CTP.CalendarConvertOptions) {
 		// biome-ignore lint/correctness/noUnusedVariables: only need jd
 		const { jd, jdn } = this.dt2jd({ year, month, day });
 		const diff = helpers.secularDiff(year);
@@ -230,7 +230,7 @@ class BcGcal {
 	 * @param tz - Optional time zone setting for the datetime object. Defaults to "GMT".
 	 * @returns A string representation of the datetime object in the format "Month Day, Year, HH:MM:SS"
 	 */
-	public jd2dtStr(jd: number, tz: TimeZones = "GMT") {
+	public jd2dtStr(jd: number, tz: tzone.TimeZone = "GMT") {
 		const ma: string[] = [
 			"Jan",
 			"Feb",
@@ -256,4 +256,4 @@ class BcGcal {
 	}
 }
 
-export { BcGcal };
+export { Gcal };
