@@ -1,6 +1,8 @@
-import type { SuSeeConfig } from "susee";
 import { suseeTerser } from "@suseejs/terser-plugin";
-const config: SuSeeConfig = {
+/**
+ * @type {import("susee").SuSeeConfig}
+ */
+const config = {
 	// Array of entry point objects.
 	// ----------------------------
 	entryPoints: [
@@ -36,7 +38,7 @@ const config: SuSeeConfig = {
 	//outDir: "dist",
 	// (optional) Allow susee to update your package.json, default: false.
 	// Uncomment the following line to edit.
-	allowUpdatePackageJson: false,
+	allowUpdatePackageJson: true,
 };
 
 export default config;

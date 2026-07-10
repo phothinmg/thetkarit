@@ -42,11 +42,5 @@
 		"skipLibCheck": true,
 		"allowJs": true
 	},
-	"include": [
-		"src/**/*",
-		"susee.config.ts",
-		"build.ts",
-		"noda/**/*",
-		"__tests__/**/*"
-	]
+	"include": ["src/**/*", "build.ts", "noda/**/*", "__tests__/**/*"]
 }
