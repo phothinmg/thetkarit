@@ -1,6 +1,6 @@
 {
 	"name": "thetkarit",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
 	"type": "module",
 	"main": "dist/index.cjs",
@@ -52,7 +52,7 @@
 		"@biomejs/biome": "^2.5.3",
 		"@suseejs/terser-plugin": "^0.0.6",
 		"@types/node": "^26.1.1",
-		"susee": "^1.5.5",
+		"susee": "^1.5.6",
 		"tsx": "^4.23.0",
 		"typescript": "^6.0.3"
 	},
