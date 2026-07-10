@@ -298,59 +298,39 @@ class BcMoon {
 		const _tzz = tz ?? "GMT";
 		// tz offset of this to fraction of day
 		const df = tzone.zoneOffset(_tzz) / 24;
-		// set time zone as GMT
-		const y = G.utcDtNow().year;
-		const rm = G.utcDtNow().month + 1;
-		// last and next month
-		const pm = rm - 1;
-		const nm = rm + 1;
-		// sometime 2 new moon days in one month , store nm to an array
-		// recent month NMs
-		const rnms: number[] = [];
-		rnms.push(this.moonPhases(y, rm).newMoon);
-		// prev month NMs
-		const pnms: number[] = [];
-		pnms.push(this.moonPhases(y, pm).newMoon);
-		// next month NMs
-		const nnms: number[] = [];
-		nnms.push(this.moonPhases(y, nm).newMoon);
-		// set jd for now , utc + tz fraction of this
-
+		const now = G.utcDtNow();
+		const cycle = this.getCycle(now.year, now.month);
 		const jdnow = G.jdUtcNow() + df;
-		// find previous and next new moon days as ,jd
-		const nm1: number | undefined = rnms.find((i) => i < jdnow);
-		const nm2: number | undefined = rnms.find((i) => i > jdnow);
-		const nm3: number =
-			pnms.length > 1 ? (pnms[1] as number) : (pnms[0] as number);
-		const nm4: number = nnms[0] as number;
-		// previous
-		const pn_m: number = nm1 ? nm1 : nm3;
-		const p_n_m: number = pn_m + df;
-		// next
-		const nn_m: number = nm2 ? nm2 : nm4;
-		const n_n_m: number = nn_m + df;
-		//TODO length of month
+
+		// Search neighboring lunation cycles directly so year boundaries and
+		// months with nearby new moons are handled consistently.
+		const newMoons = [cycle - 1, cycle, cycle + 1, cycle + 2]
+			.map((value) => this.phaseDate(value, 0) + df)
+			.sort((a, b) => a - b);
+		const p_n_m = newMoons.filter((value) => value <= jdnow).at(-1);
+		const n_n_m = newMoons.find((value) => value > jdnow);
+
+		if (p_n_m === undefined || n_n_m === undefined) {
+			throw new Error("Unable to locate surrounding new moon dates.");
+		}
+
 		const l_m: number = n_n_m - p_n_m;
 		// moon age now
-		if (jdnow < p_n_m) {
-			throw new Error(
-				`JdNow : ${jdnow} ${G.jd2dtStr(
-					jdnow,
-					_tzz,
-				)} must greater than PNM : ${p_n_m} ${G.jd2dtStr(p_n_m, _tzz)}`,
-			);
-		}
 		const man = jdnow - p_n_m;
 		// find full moon
-		const fma: number[] = [];
-		for (let i = pm; i <= nm; i++) {
-			fma.push(this.moonPhases(y, i).fullMoon + df);
-		}
+		const fma = [cycle - 1, cycle, cycle + 1, cycle + 2]
+			.map((value) => this.phaseDate(value, 0.5) + df)
+			.sort((a, b) => a - b);
 		let fm = 0;
 		for (const f of fma) {
 			if (f > p_n_m && f < n_n_m) {
 				fm = f;
 			}
+		}
+		if (fm === 0) {
+			throw new Error(
+				"Unable to locate the full moon within the current cycle.",
+			);
 		}
 		// string of fm, pnm and nnm
 		const fmStr = G.jd2dtStr(fm, _tzz);

@@ -2,7 +2,7 @@
 <!-- markdownlint-disable MD041 -->
 <div align="center">
 <img src="https://susee.phothin.dev/logo/thetkarit/logo.webp" width="160" height="160" alt="susee" />
-  <h1>Thetkarit</h1>
+  <h1>thetkarit</h1>
 </div>
 <!-- markdownlint-enable MD033 -->
 
@@ -13,6 +13,8 @@
 This project focuses on Burmese calendar calculations and astronomy studies and is still under active development.
 
 Most of the code in this repository is in the public domain or released under an open source license. However, some code and/or data may use different copyright terms (usually still an open source license). See [Resources](#resources).
+
+The package exports a default object with focused modules for calendar views, moon phases, sunrise and sunset calculations, time zone helpers, and small UI helpers.
 
 <!-- cSpell:disable -->
 
@@ -31,10 +33,9 @@ npm install thetkarit
 ### ESM (JavaScript)
 
 ```js
-import Thetkarit from "thetkarit";
+import thetkarit from "thetkarit";
 
-const cal = new Thetkarit.BurmeseCal();
-const day = cal.dayView({
+const day = thetkarit.calendar.dayView({
   year: 2025,
   month: 2,
   day: 12,
@@ -53,10 +54,9 @@ console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 ### TypeScript
 
 ```ts
-import Thetkarit from "thetkarit";
+import thetkarit from "thetkarit";
 
-const cal = new Thetkarit.BurmeseCal();
-const day = cal.dayView({
+const day = thetkarit.calendar.dayView({
   year: 2025,
   month: 2,
   day: 12,
@@ -75,10 +75,9 @@ console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 ### CommonJS
 
 ```js
-const Thetkarit = require("thetkarit");
+const thetkarit = require("thetkarit");
 
-const cal = new Thetkarit.BurmeseCal();
-const day = cal.dayView({
+const day = thetkarit.calendar.dayView({
   year: 2025,
   month: 2,
   day: 12,
@@ -97,6 +96,111 @@ console.log("Public Holidays:", day.burmese_cal.public_holiday.join(", "));
 ---
 
 ## TypeScript API
+
+The default export exposes these runtime members:
+
+- `calendar`
+- `moon`
+- `sunTimes(options)`
+- `zoneOffset(timeZone)`
+- `zoneInfo(timeZone)`
+- `timeZones`
+- `timeZonesInfo`
+- `ui.blankCells`
+- `ui.numberRange`
+
+It also re-exports the main TypeScript types for calendar views, time zones, moon phases, and sun time calculations.
+
+### Calendar
+
+```ts
+import thetkarit from "thetkarit";
+
+const month = thetkarit.calendar.monthView({
+  year: 2025,
+  month: 4,
+  lang: "English",
+});
+
+const thingyan = thetkarit.calendar.thingyan(2025);
+const julian = thetkarit.calendar.datetimeToJd({
+  year: 2025,
+  month: 4,
+  day: 17,
+  hour: 12,
+  tz: "Asia/Yangon",
+});
+
+console.log(month.month.long);
+console.log(thingyan.NewYearDay);
+console.log(julian.jd, julian.jdn);
+```
+
+Available calendar methods:
+
+- `yearView({ year, lang })`
+- `monthView({ year, month, lang })`
+- `dayView({ year, month, day, lang })`
+- `thingyan(year, yearType?)`
+- `burmeseYearType(burmeseYear, lang?)`
+- `datetimeToJd({ year, month, day, hour?, minutes?, seconds?, tz? })`
+- `jdToDatetime(jd, tz?)`
+- `calendarConverter({ ct, year, month, day })`
+
+### Moon
+
+```ts
+import thetkarit from "thetkarit";
+
+const phases = thetkarit.moon.moonPhaseStr(2025, 8);
+const fullMoonDays = thetkarit.moon.fullmoonDay(2025, "Asia/Yangon");
+
+console.log(phases.fullMoon);
+console.log(fullMoonDays[0]);
+```
+
+Available moon methods:
+
+- `moonPhases(year, month)`
+- `moonPhaseStr(year, month)`
+- `fullmoonDay(year, tz?)`
+- `moonAge(tz?)`
+- `meenusLunationNumber(year, month)`
+- `brownLunationNumber(year, month)`
+- `thaiLunationNumber(year, month)`
+
+Note: the moon helpers use zero-based month values where `0 = January` and `11 = December`.
+
+### Sun And Time Zones
+
+```ts
+import thetkarit from "thetkarit";
+
+const sun = thetkarit.sunTimes({
+  latitude: 16.8661,
+  longitude: 96.1951,
+  date: new Date("2025-02-12T00:00:00Z"),
+  timezone: "Asia/Yangon",
+});
+
+const offset = thetkarit.zoneOffset("Asia/Yangon");
+const info = thetkarit.zoneInfo("Asia/Yangon");
+
+console.log(sun.sunrise, sun.sunset, sun.daytime);
+console.log(offset);
+console.log(info?.countryName, info?.currentOffset);
+```
+
+### Source Layout
+
+The main modules under `/src` are organized as follows:
+
+- `src/index.ts`: package entrypoint and public exports.
+- `src/calendar/`: Burmese calendar, Gregorian conversions, translations, holidays, astrology days, and view builders.
+- `src/moon/`: moon phase, full moon, lunation, and moon age calculations.
+- `src/suntime/`: sunrise, sunset, and daytime duration calculations.
+- `src/timezones/`: supported IANA time zones, offsets, and metadata.
+- `src/calendar/ui/`: small helpers for calendar-oriented UI rendering.
 
 ## Resources
 

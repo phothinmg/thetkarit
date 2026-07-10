@@ -1,4 +1,62 @@
 import assert from "node:assert";
+import { mock } from "node:test";
+import thetkarit from "../src/index.js";
+
+const burmeseLanguage = "Burmese" satisfies thetkarit.Language;
+
+function withMockedDate<T>(
+	t: { after: (fn: () => void) => void },
+	isoDate: string,
+	run: () => T,
+): T {
+	mock.timers.enable({ apis: ["Date"], now: new Date(isoDate) });
+	t.after(() => mock.timers.reset());
+	return run();
+}
+
+function burmeseDayViewOptions(
+	overrides: Partial<thetkarit.DayViewOptions> = {},
+): thetkarit.DayViewOptions {
+	return {
+		year: 2026,
+		month: 4,
+		day: 1,
+		lang: burmeseLanguage,
+		...overrides,
+	};
+}
+
+function burmeseMonthViewOptions(
+	overrides: Partial<thetkarit.MonthViewOptions> = {},
+): thetkarit.MonthViewOptions {
+	return {
+		year: 2026,
+		month: 4,
+		lang: burmeseLanguage,
+		...overrides,
+	};
+}
+
+function burmeseYearViewOptions(
+	overrides: Partial<thetkarit.YearViewOptions> = {},
+): thetkarit.YearViewOptions {
+	return {
+		year: 2026,
+		lang: burmeseLanguage,
+		...overrides,
+	};
+}
+
+function expectZoneOffset(timeZone: thetkarit.TimeZone, offset: number) {
+	assert.deepEqual(thetkarit.zoneOffset(timeZone), offset);
+}
+
+function expectZoneInfo(timeZone: thetkarit.TimeZone) {
+	const expected = thetkarit.timeZonesInfo.find((zone) =>
+		zone.names.includes(timeZone),
+	);
+	assert.deepEqual(thetkarit.zoneInfo(timeZone), expected);
+}
 // biome-ignore lint/suspicious/noExplicitAny: reason we need any here
 function sortObject(obj: any) {
 	return Object.fromEntries(
@@ -38,4 +96,13 @@ function expect(entry: any) {
 	return { hasOwn, isInstanceOf, hasLength };
 }
 
-export { sortObject, expect };
+export {
+	burmeseDayViewOptions,
+	burmeseMonthViewOptions,
+	burmeseYearViewOptions,
+	expect,
+	expectZoneInfo,
+	expectZoneOffset,
+	sortObject,
+	withMockedDate,
+};

@@ -2,16 +2,18 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
 import thetkarit from "../../src/index.js";
+import {
+	burmeseDayViewOptions,
+	burmeseMonthViewOptions,
+	burmeseYearViewOptions,
+} from "../tests_helpers.js";
 
 const cal = thetkarit.calendar;
 
 describe("Burmese Calendar Day View Tests", () => {
-	const dvOptions: thetkarit.DayViewOptions = {
-		year: 2026,
-		month: 4,
-		day: 1,
-		lang: "Burmese",
-	};
+	// Reuse one known Gregorian date so each assertion checks a different field
+	// from the same calculated calendar payload.
+	const dvOptions = burmeseDayViewOptions();
 	const dv = cal.dayView(dvOptions);
 	it("Julian Day Number", () => {
 		assert.deepEqual(dv.jdn, 2461132);
@@ -44,11 +46,7 @@ describe("Burmese Calendar Day View Tests", () => {
 });
 
 describe("Burmese Calendar Month View Tests", () => {
-	const mvOptions: thetkarit.MonthViewOptions = {
-		year: 2026,
-		month: 4,
-		lang: "Burmese",
-	};
+	const mvOptions = burmeseMonthViewOptions();
 	const mv = cal.monthView(mvOptions);
 
 	it("returns the requested month with day views", () => {
@@ -62,10 +60,7 @@ describe("Burmese Calendar Month View Tests", () => {
 });
 
 describe("Burmese Calendar Year View Tests", () => {
-	const yvOptions: thetkarit.YearViewOptions = {
-		year: 2026,
-		lang: "Burmese",
-	};
+	const yvOptions = burmeseYearViewOptions();
 	const yv = cal.yearView(yvOptions);
 
 	it("returns the requested year with month views", () => {

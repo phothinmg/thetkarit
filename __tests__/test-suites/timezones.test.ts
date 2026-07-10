@@ -1,43 +1,36 @@
 // cSpell:disable
 import { describe, it } from "node:test";
-import assert from "node:assert";
-import thetkarit from "../../src/index.js";
+import { expectZoneInfo, expectZoneOffset } from "../tests_helpers.js";
 
 describe("Time Zones Offset Tests", () => {
 	it("Myanmar Time", () => {
-		assert.deepEqual(thetkarit.zoneOffset("Asia/Yangon"), 6.5);
+		expectZoneOffset("Asia/Yangon", 6.5);
 	});
 	it("Thailand Time", () => {
-		assert.deepEqual(thetkarit.zoneOffset("Asia/Bangkok"), 7);
+		expectZoneOffset("Asia/Bangkok", 7);
 	});
 	it("Kathmandu Time only one tz extra 0:45 minutes", () => {
-		assert.deepEqual(thetkarit.zoneOffset("Asia/Kathmandu"), 5.75);
+		expectZoneOffset("Asia/Kathmandu", 5.75);
 	});
 	it("UTC Time", () => {
-		assert.deepEqual(thetkarit.zoneOffset("UTC"), 0);
+		expectZoneOffset("UTC", 0);
 	});
 	it("GMT Time", () => {
-		assert.deepEqual(thetkarit.zoneOffset("GMT"), 0);
+		expectZoneOffset("GMT", 0);
 	});
 	it("Etc/GMT+12 Time", () => {
-		assert.deepEqual(thetkarit.zoneOffset("Etc/GMT+12"), -12);
+		expectZoneOffset("Etc/GMT+12", -12);
 	});
 	it("Etc/GMT+12 Time", () => {
-		assert.deepEqual(thetkarit.zoneOffset("Pacific/Kiritimati"), +14);
+		expectZoneOffset("Pacific/Kiritimati", +14);
 	});
 });
 
 describe("Zone Info Tests", () => {
 	it("Myanmar Time", () => {
-		const mm = thetkarit.timeZonesInfo.find((z) =>
-			z.names.includes("Asia/Yangon"),
-		);
-		assert.deepEqual(thetkarit.zoneInfo("Asia/Yangon"), mm);
+		expectZoneInfo("Asia/Yangon");
 	});
 	it("Thailand Time", () => {
-		const mm = thetkarit.timeZonesInfo.find((z) =>
-			z.names.includes("Asia/Bangkok"),
-		);
-		assert.deepEqual(thetkarit.zoneInfo("Asia/Bangkok"), mm);
+		expectZoneInfo("Asia/Bangkok");
 	});
 });
