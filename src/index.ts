@@ -42,8 +42,8 @@ namespace thetkarit {
 	export const zoneOffset = (tz: TimeZone): number => tzone.zoneOffset(tz);
 	export const zoneInfo = (tz: TimeZone): TimeZonesInfo | undefined =>
 		tzone.zoneInfo(tz);
-	export const timeZones = tzone.timeZones;
-	export const timeZonesInfo = tzone.timeZonesInfo;
+	export const timeZones: TimeZone[] = tzone.timeZones;
+	export const timeZonesInfo: TimeZonesInfo[] = tzone.timeZonesInfo;
 	export const moon = new BcMoon();
 	export const sunTimes = (options: SunTimesOptions): SunTimesResult =>
 		stime.suntimes(options);
