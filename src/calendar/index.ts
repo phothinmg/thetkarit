@@ -1,5 +1,4 @@
 // cSpell:disable
-
 import type tzone from "../timezones/index.js";
 import { BcAstro } from "./bcal/astro-days/index.js";
 import { BcHolidays } from "./bcal/holidays/index.js";
@@ -17,9 +16,7 @@ class Tcal {
 	private _year: number = new Date().getFullYear();
 	private month_ = new Date().getMonth();
 	private _date = new Date().getDate();
-	private is_now(y: number, m: number, d: number): boolean {
-		return y === this._year && m === this.month_ && d === this._date;
-	}
+
 	constructor(G: Gcal, B: Bcal, T: BcTranslate) {
 		this._G = G;
 		this._B = B;
@@ -171,7 +168,7 @@ class Tcal {
 						short: this._G.WEEK_DAYS_SHORT[wd] ?? "",
 					},
 					isHoliday: hlds.holidaysArray.length > 0,
-					isNow: this.is_now(this._year, i + 1, j),
+					isNow: this.month_ + 1 === _month && this._date === j,
 					burmese_cal: {
 						sasana_year: {
 							id: bcal.ssy,
