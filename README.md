@@ -224,8 +224,9 @@ The main modules under `/src` are organized as follows:
 
 - Based on the algorithm by Rui Okada: <https://gist.github.com/ruiokada/b28076d4911820ddcbbc>
 
-- Computation references:
-  - <https://en.wikipedia.org/wiki/Julian_day#Converting_Julian_or_Gregorian_calendar_date_to_Julian_Day_Number>
-  - <https://en.wikipedia.org/wiki/Sunrise_equation#Complete_calculation_on_Earth>
+### Computation references
+
+- <https://en.wikipedia.org/wiki/Julian_day#Converting_Julian_or_Gregorian_calendar_date_to_Julian_Day_Number>
+- <https://en.wikipedia.org/wiki/Sunrise_equation#Complete_calculation_on_Earth>
 
 ---
