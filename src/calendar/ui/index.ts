@@ -11,15 +11,12 @@
  * console.log(result.before); // 3
  * console.log(result.after);  // 1
  */
-function blankCells(
-	weekdayId: number,
-	daysInMonth: number,
-): { before: number; after: number } {
-	const t = (weekdayId % 7) + daysInMonth;
-	return {
-		before: weekdayId % 7,
-		after: t <= 35 ? Math.max(0, 35 - t) : Math.max(0, 42 - t),
-	};
+function blankCells(weekdayId: number, daysInMonth: number): { before: number; after: number } {
+  const t = (weekdayId % 7) + daysInMonth;
+  return {
+    before: weekdayId % 7,
+    after: t <= 35 ? Math.max(0, 35 - t) : Math.max(0, 42 - t),
+  };
 }
 /**
  * Generates an array of numbers in a specified range.
@@ -35,15 +32,15 @@ function blankCells(
  */
 
 function numberRange(start: number, end: number): number[] {
-	if (end <= start) {
-		throw new Error("End must be greater than Start");
-	}
-	const length = end - start + 1;
-	const na = Array(length);
-	for (let i = 0; i < length; i++) {
-		na[i] = start + i;
-	}
-	return na;
+  if (end <= start) {
+    throw new Error("End must be greater than Start");
+  }
+  const length = end - start + 1;
+  const na = Array(length);
+  for (let i = 0; i < length; i++) {
+    na[i] = start + i;
+  }
+  return na;
 }
 
 export { blankCells, numberRange };

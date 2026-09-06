@@ -1,72 +1,71 @@
 {
-	"name": "thetkarit",
-	"version": "1.0.12",
-	"description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
-	"type": "module",
-	"main": "dist/index.cjs",
-	"types": "dist/index.d.cts",
-	"module": "dist/index.mjs",
-	"exports": {
-		".": {
-			"import": {
-				"types": "./dist/index.d.mts",
-				"default": "./dist/index.mjs"
-			},
-			"require": {
-				"types": "./dist/index.d.cts",
-				"default": "./dist/index.cjs"
-			}
-		}
-	},
-	"scripts": {
-		"hooks:install": "bash scripts/install-hooks.sh",
-		"lint": "biome check --write src",
-		"fmt": "biome format --write",
-		"build": "susee",
-		"test": "tsx --test",
-		"noda": "node noda/noda.js",
-		"commit": "bash scripts/commit.sh",
-		"v:patch": "npm version patch --no-git-tag-version",
-		"v:minor": "npm version minor --no-git-tag-version",
-		"v:major": "npm version major --no-git-tag-version",
-		"coverage": "tsx __tests__/lcov/index.ts"
-	},
-	"keywords": [
-		"Gregorian calendar",
-		"Burmese calendar"
-	],
-	"author": {
-		"name": "Pho Thin Mg",
-		"email": "phothinmg@disroot.org",
-		"url": "https://github.com/phothinmg"
-	},
-	"license": "Apache-2.0",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/phothinmg/thetkarit.git"
-	},
-	"bugs": {
-		"url": "https://github.com/phothinmg/thetkarit/issues"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^2.5.3",
-		"@suseejs/terser-plugin": "^0.0.6",
-		"@types/node": "^26.1.1",
-		"susee": "^1.6.2",
-		"tsx": "^4.23.0",
-		"typescript": "^7.0.2"
-	},
-	"files": [
-		"dist/**/*",
-		"LICENSE",
-		"README.md",
-		"package.json"
-	],
-	"publishConfig": {
-		"provenance": true,
-		"access": "public"
-	},
-	"allowScripts": {
-		"esbuild@0.28.1": true
-	}
+  "name": "thetkarit",
+  "version": "1.0.12",
+  "description": "The Burmese calendar calculations focus on Burmese calendar and astronomy studies",
+  "keywords": [
+    "Burmese calendar",
+    "Gregorian calendar"
+  ],
+  "bugs": {
+    "url": "https://github.com/phothinmg/thetkarit/issues"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Pho Thin Mg",
+    "email": "phothinmg@disroot.org",
+    "url": "https://github.com/phothinmg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phothinmg/thetkarit.git"
+  },
+  "files": [
+    "dist/**/*",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "hooks:install": "bash scripts/install-hooks.sh",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "build": "susee build",
+    "test": "oxnode --test",
+    "noda": "node noda/noda.js",
+    "commit": "bash scripts/commit.sh",
+    "v:patch": "npm version patch --no-git-tag-version",
+    "v:minor": "npm version minor --no-git-tag-version",
+    "v:major": "npm version major --no-git-tag-version",
+    "coverage": "oxnode __tests__/lcov/index.ts"
+  },
+  "devDependencies": {
+    "@oxc-node/cli": "^0.1.0",
+    "@types/node": "^26.1.1",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.81.0",
+    "susee": "^2.3.0",
+    "typescript": "^7.0.2"
+  }
 }
