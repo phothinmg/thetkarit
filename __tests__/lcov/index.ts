@@ -4,7 +4,7 @@ import lcovToCodecov from "./lcov.js";
 
 const lcovFile = "__tests__/lcov/lcov.info";
 
-const testScript = `npx tsx --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=${lcovFile}`;
+const testScript = `npx oxnode --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=${lcovFile}`;
 
 const jobs = [
   async () => {
